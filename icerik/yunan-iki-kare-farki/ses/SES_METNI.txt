@@ -1,0 +1,8 @@
+Sesli anlatım metni (yaklaşık 20 sn, enerjik oku):
+1. (0-3 sn)   Yunanlılar formül değil, şekil kullanırdı!
+2. (3-6 sn)   Kenarı a olan kareden, kenarı b olan kareyi çıkar.
+3. (6-9 sn)   Kalan parçayı köşegenden ikiye böl.
+4. (9-12 sn)  Parçaları yeniden diz... ve işte dikdörtgen!
+5. (13-15 sn) Kenarları: a artı b ve a eksi b.
+6. (15-17 sn) Yani a kare eksi b kare, eşittir, a artı b çarpı a eksi b.
+7. (17-20 sn) Kaydet, sınavda lazım olur!
