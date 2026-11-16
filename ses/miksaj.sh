@@ -12,7 +12,7 @@ case "$STIL" in
 esac
 if [ -n "$VOICE" ]; then
   ffmpeg -y -loglevel error -i "$V" -i "$D/ses/music.wav" -i "$D/ses/sfx.wav" -i "$VOICE" -filter_complex \
-   "[3:a]aresample=44100,${FX},apad,atrim=0:${DUR},asplit=2[v][vs];[1:a]volume=0.55[m];[m][vs]sidechaincompress=threshold=0.04:ratio=9:attack=15:release=350[md];[2:a]volume=0.8[x];[md][x][v]amix=inputs=3:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[a]" \
+   "[3:a]aresample=44100,${FX},apad,atrim=0:${DUR},asplit=2[v][vs];[1:a]volume=0.2[m];[m][vs]sidechaincompress=threshold=0.04:ratio=9:attack=15:release=350[md];[2:a]volume=0.8[x];[md][x][v]amix=inputs=3:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[a]" \
    -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -t "$DUR" "$OUT"
 else
   ffmpeg -y -loglevel error -i "$V" -i "$D/ses/music.wav" -i "$D/ses/sfx.wav" -filter_complex \

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       slug: {description: 'icerik klasörü adı', required: true, default: 'yunan-iki-kare-farki'}
-      ses:  {description: 'Gemini ses adı (Kore, Puck, Charon, Aoede, Fenrir, Leda, Orus, Zephyr...)', required: true, default: 'Kore'}
+      ses:  {description: 'Gemini ses adı (Kore, Puck, Charon, Aoede, Fenrir, Leda, Orus, Zephyr...)', required: true, default: 'Puck'}
       stil: {description: 'Okuma stili (İngilizce komut; boş bırakılırsa varsayılan enerjik)', required: false, default: ''}
 permissions: {contents: write}
 jobs:

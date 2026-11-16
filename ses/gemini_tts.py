@@ -5,7 +5,7 @@ Her boş olmayan satır bir cümledir. Çıktı: cumle-1.wav ... ve sesler.json 
 import sys, os, json, time, base64, wave, urllib.request, urllib.error
 txt, out = sys.argv[1], sys.argv[2]
 voice = sys.argv[3] if len(sys.argv) > 3 else 'Kore'
-style = sys.argv[4] if len(sys.argv) > 4 else 'Say in Turkish with an energetic, fast-paced, enthusiastic teacher voice and strong emphasis on key words'
+style = sys.argv[4] if len(sys.argv) > 4 else 'Speak in clear, natural Turkish like a confident young male math teacher: warm, lively, steady pace, crisp pronunciation, emphasize the key words'
 key = os.environ['GEMINI_API_KEY']
 MODELS = [m for m in [os.environ.get('GEMINI_TTS_MODEL'), 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts'] if m]
 os.makedirs(out, exist_ok=True)
