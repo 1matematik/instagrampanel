@@ -6,7 +6,7 @@ on:
       slug: {description: 'icerik klasörü adı', required: true, default: 'yunan-iki-kare-farki'}
       ses:  {description: 'Gemini ses adı (Kore, Puck, Charon, Aoede, Fenrir, Leda, Orus, Zephyr...)', required: true, default: 'Kore'}
       stil: {description: 'Okuma stili (İngilizce komut; boş bırakılırsa varsayılan enerjik)', required: false, default: ''}
-permissions: {contents: read}
+permissions: {contents: write}
 jobs:
   uret:
     runs-on: ubuntu-latest
@@ -41,3 +41,13 @@ jobs:
         with:
           name: ${{ inputs.slug }}
           path: cikti/
+      - name: Önizleme dalına yükle (tarayıcıda izlemek için)
+        env:
+          SLUG: ${{ inputs.slug }}
+        run: |
+          mkdir -p /tmp/onizleme && cp "cikti/$SLUG.mp4" /tmp/onizleme/
+          cd /tmp/onizleme
+          git init -q -b onizleme
+          git config user.name "panel-bot" && git config user.email "bot@users.noreply.github.com"
+          git add . && git commit -q -m "önizleme: $SLUG"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" onizleme
