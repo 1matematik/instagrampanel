@@ -6,7 +6,7 @@ import numpy as np
 from scipy import signal
 SR = 44100
 rng = np.random.default_rng(7)
-d = sys.argv[1]; cfg = json.load(open(os.path.join(d, 'ses.json')))
+d = sys.argv[1]; cfg = json.load(open(sys.argv[2] if len(sys.argv) > 2 else os.path.join(d, 'ses.json')))
 D, BPM = cfg['sure'], cfg.get('bpm', 124); N = int(D*SR); beat = 60/BPM; bar = 4*beat
 def mix_in(buf, snd, t, g=1.0):
     i = int(t*SR)

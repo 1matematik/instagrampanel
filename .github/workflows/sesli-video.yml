@@ -1,0 +1,43 @@
+name: sesli-video
+# Elle çalıştırılır: Actions > sesli-video > Run workflow. Gemini ile seslendirir, videoyu senkronlar, mp4'ü "artifact" olarak sunar.
+on:
+  workflow_dispatch:
+    inputs:
+      slug: {description: 'icerik klasörü adı', required: true, default: 'yunan-iki-kare-farki'}
+      ses:  {description: 'Gemini ses adı (Kore, Puck, Charon, Aoede, Fenrir, Leda, Orus, Zephyr...)', required: true, default: 'Kore'}
+      stil: {description: 'Okuma stili (İngilizce komut; boş bırakılırsa varsayılan enerjik)', required: false, default: ''}
+permissions: {contents: read}
+jobs:
+  uret:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - name: Araçları kur
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          pip install --quiet numpy scipy
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm i --no-save --silent playwright
+      - name: Seslendir, senkronla, üret
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SLUG: ${{ inputs.slug }}
+          SES: ${{ inputs.ses }}
+          STIL: ${{ inputs.stil }}
+          PLAYWRIGHT_PATH: ${{ github.workspace }}/node_modules/
+        run: |
+          set -e
+          D="icerik/$SLUG"
+          [ -f "$D/ses/metin.txt" ] || { echo "metin.txt yok"; exit 1; }
+          if [ -n "$STIL" ]; then python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" "$STIL"; else python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES"; fi
+          python3 ses/senkron.py "$D"
+          python3 ses/muzik.py "$D" "$D/ses/ses_gercek.json"
+          node panel.mjs render "$SLUG"
+          ses/miksaj.sh "$D" kuru "$D/ses/voice.wav"
+          mkdir -p cikti && cp "$D/final.mp4" "cikti/$SLUG.mp4" && cp "$D/ses/sesler.json" "cikti/$SLUG-sesler.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.slug }}
+          path: cikti/

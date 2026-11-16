@@ -18,9 +18,9 @@ if (cmd==='durum') {
 } else if (cmd==='render') {
   need(); const o=rd(slug), html=path.join(DIR(slug),'sahne.html');
   if(!fs.existsSync(html)) { console.error('sahne.html yok'); process.exit(1); }
-  const r=spawnSync('node',[path.join(ROOT,'render/render.mjs'),html,path.join(DIR(slug),'video.mp4'),String(o.sure),String(o.fps)],{stdio:'inherit'});
+  const r=spawnSync('node',[path.join(ROOT,'render/render.mjs'),html,path.join(DIR(slug),'video.mp4'),String(o.sure),String(o.fps),...(fs.existsSync(path.join(DIR(slug),'ses','zaman.json'))?[path.join(DIR(slug),'ses','zaman.json')]:[])],{stdio:'inherit'});
   if(r.status) process.exit(r.status);
-  spawnSync('ffmpeg',['-y','-loglevel','error','-ss',String(o.sure*0.75),'-i',path.join(DIR(slug),'video.mp4'),'-frames:v','1',path.join(DIR(slug),'kapak.jpg')]);
+  spawnSync('ffmpeg',['-y','-loglevel','error','-ss',String((fs.existsSync(path.join(DIR(slug),'ses','zaman.json'))?JSON.parse(fs.readFileSync(path.join(DIR(slug),'ses','zaman.json'))).sure:o.sure)*0.75),'-i',path.join(DIR(slug),'video.mp4'),'-frames:v','1',path.join(DIR(slug),'kapak.jpg')]);
   o.durum='onay-bekliyor'; log(o,'render edildi, onay bekliyor'); wr(slug,o);
 } else if (cmd==='onayla') {
   need(); const o=rd(slug), err=[];
