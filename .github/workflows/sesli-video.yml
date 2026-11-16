@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       slug: {description: 'icerik klasörü adı', required: true, default: 'yunan-iki-kare-farki'}
-      ses:  {description: 'Gemini ses adı (Kore, Puck, Charon, Aoede, Fenrir, Leda, Orus, Zephyr...)', required: true, default: 'Puck'}
+      ses:  {description: 'Ses: tr-TR-AhmetNeural (erkek), tr-TR-EmelNeural (kadın) veya Gemini sesi (Puck, Kore...)', required: true, default: 'tr-TR-AhmetNeural'}
       stil: {description: 'Okuma stili (İngilizce komut; boş bırakılırsa varsayılan enerjik)', required: false, default: ''}
 permissions: {contents: write}
 jobs:
@@ -18,7 +18,7 @@ jobs:
       - name: Araçları kur
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
-          pip install --quiet numpy scipy
+          pip install --quiet numpy scipy edge-tts
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm i --no-save --silent playwright
       - name: Seslendir, senkronla, üret
         env:
@@ -31,7 +31,10 @@ jobs:
           set -e
           D="icerik/$SLUG"
           [ -f "$D/ses/metin.txt" ] || { echo "metin.txt yok"; exit 1; }
-          if [ -n "$STIL" ]; then python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" "$STIL"; else python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES"; fi
+          case "$SES" in
+            tr-TR-*) python3 ses/edge_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" ;;
+            *) if [ -n "$STIL" ]; then python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" "$STIL"; else python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES"; fi ;;
+          esac
           python3 ses/senkron.py "$D"
           python3 ses/muzik.py "$D" "$D/ses/ses_gercek.json"
           node panel.mjs render "$SLUG"
