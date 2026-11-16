@@ -23,10 +23,10 @@ res = []
 for i, text in enumerate(lines, 1):
     pcm = None; err = None
     for model in MODELS:
-        for attempt in range(4):
+        for attempt in range(6):
             try: pcm = call(model, text); break
             except urllib.error.HTTPError as e:
-                err = f"{model} HTTP {e.code}"; time.sleep(15 if e.code in (429, 500, 503) else 1)
+                err = f"{model} HTTP {e.code}"; time.sleep(35 if e.code in (429, 500, 503) else 1)
                 if e.code in (400, 404): break
             except Exception as e: err = f"{model} {e}"; time.sleep(5)
         if pcm: break
@@ -34,5 +34,5 @@ for i, text in enumerate(lines, 1):
     p = os.path.join(out, f"cumle-{i}.wav")
     with wave.open(p, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes(pcm)
     res.append({"no": i, "metin": text, "sure": len(pcm)/2/24000, "model": model}); print(res[-1])
-    time.sleep(3)
+    time.sleep(21)  # ücretsiz kota ~3 istek/dk
 json.dump(res, open(os.path.join(out, 'sesler.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
