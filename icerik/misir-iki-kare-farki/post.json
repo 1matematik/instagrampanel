@@ -13,11 +13,12 @@
   ],
   "yayin_zamani": "2026-11-18T17:05:00+03:00",
   "kaynak": "Kullanıcının gönderdiği ders kitabı görseli; Mısır temalı özgün yeniden tasarım",
-  "durum": "onay-bekliyor",
+  "durum": "onaylandi",
   "kayit": [
     "2026-11-17T00:20:00Z oluşturuldu (Mısır teması)",
     "2026-11-17T02:16:01.499Z takvime alındı: 2026-11-19T21:15:00+03:00",
-    "2026-11-17T02:24:04.921Z takvime alındı: 2026-11-18T17:05:00+03:00"
+    "2026-11-17T02:24:04.921Z takvime alındı: 2026-11-18T17:05:00+03:00",
+    "2026-11-17T02:29:27.751Z kullanıcı onayladı"
   ],
   "ana_izgara": false
 }

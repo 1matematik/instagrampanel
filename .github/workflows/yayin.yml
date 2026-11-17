@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths: ['icerik/**/post.json']
-  schedule: [{cron: '*/5 * * * *'}]
+  schedule: [{cron: '*/10 13-19 * * *'}]
   workflow_dispatch:
 permissions: {contents: write}
 concurrency: {group: yayin, cancel-in-progress: false}

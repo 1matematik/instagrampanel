@@ -1,0 +1,16 @@
+name: baglanti-testi
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Instagram bağlantısını ve video adresini dene (yayın YAPMAZ)
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: |
+          set -e
+          echo "--- Instagram hesabı (token geçerli mi?)"
+          curl -s "https://graph.facebook.com/v21.0/${IG_USER_ID}?fields=username,media_count&access_token=${IG_TOKEN}" | sed 's/access_token=[^"&]*/***/g'
+          echo; echo "--- Video adresi herkese açık mı?"
+          curl -sI "https://raw.githubusercontent.com/${{ github.repository }}/main/yayin/video/yunan-iki-kare-farki.mp4" | head -5
