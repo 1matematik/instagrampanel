@@ -25,10 +25,10 @@ if (cmd==='durum') {
 } else if (cmd==='onayla') {
   need(); const o=rd(slug), err=[];
   if(o.durum!=='onay-bekliyor') err.push('durum onay-bekliyor olmalı (şu an: '+o.durum+')');
-  if(!fs.existsSync(path.join(DIR(slug),'video.mp4'))) err.push('video.mp4 yok');
+  if(!fs.existsSync(path.join(ROOT,'yayin','video',slug+'.mp4'))) err.push('yayin/video/'+slug+'.mp4 yok');
   const full=[o.caption,...(o.hashtagler||[]).map(h=>'#'+h.replace(/^#/,''))].join('\n\n');
   if(!o.caption.trim()) err.push('caption boş'); if(full.length>2200) err.push('caption+hashtag 2200 karakteri aşıyor');
-  if((o.hashtagler||[]).length>30) err.push('30’dan fazla hashtag');
+  if((o.hashtagler||[]).length>5) err.push('Instagram en fazla 5 hashtag kabul ediyor');
   if(o.yayin_zamani && isNaN(Date.parse(o.yayin_zamani))) err.push('yayin_zamani geçersiz');
   if(err.length){ console.error('ONAYLANAMADI:\n- '+err.join('\n- ')); process.exit(1); }
   o.durum='onaylandi'; log(o,'kullanıcı onayladı'); wr(slug,o); console.log('onaylandı:',slug);

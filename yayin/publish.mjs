@@ -15,14 +15,16 @@ for(const s of fs.readdirSync(path.join(ROOT,'icerik')).sort()){
   const note=m=>(o.kayit ||= []).push(new Date().toISOString()+' '+m);
   if(o.durum!=='onaylandi') continue;
   if(o.yayin_zamani && Date.parse(o.yayin_zamani)>Date.now()) { console.log(s,'zamanı gelmedi'); continue; }
-  const caption=[o.caption,...(o.hashtagler||[]).map(h=>'#'+h.replace(/^#/,''))].join('\n\n');
-  const videoUrl=`${RAW_BASE}/icerik/${s}/video.mp4`;
+  const caption=[o.caption,...(o.hashtagler||[]).slice(0,5).map(h=>'#'+h.replace(/^#/,''))].join('\n\n');
+  const videoFile=path.join(ROOT,'yayin','video',s+'.mp4');
+  if(!fs.existsSync(videoFile)){ console.log(s,'video yayin/video/ klasöründe yok; atlandı'); continue; }
+  const videoUrl=`${RAW_BASE}/yayin/video/${s}.mp4`;
   if(DRY){ console.log('[dry-run] yayınlanırdı:',s,videoUrl,'\n',caption.slice(0,80)); continue; }
   if(!(IG_USER_ID&&IG_TOKEN&&RAW_BASE)){ console.error(s+': yayın için IG_USER_ID, IG_TOKEN, RAW_BASE gerekli; atlandı'); failed++; continue; }
   // Çift paylaşımı önlemek için önce durumu "yayinlaniyor" yap ve kaydet; çökerse kullanıcı elle kontrol eder.
   o.durum='yayinlaniyor'; note('yayın başladı'); save();
   try{
-    const c=await g('POST',`/${IG_USER_ID}/media`,{media_type:'REELS',video_url:videoUrl,caption,share_to_feed:'true'});
+    const c=await g('POST',`/${IG_USER_ID}/media`,{media_type:'REELS',video_url:videoUrl,caption,share_to_feed:'false'});
     for(let i=0;i<60;i++){ const st=await g('GET',`/${c.id}`,{fields:'status_code,status'});
       if(st.status_code==='FINISHED') break; if(st.status_code==='ERROR'||st.status_code==='EXPIRED') throw new Error('işlem hatası: '+st.status);
       if(i===59) throw new Error('video işleme zaman aşımı'); await sleep(10000); }

@@ -9,14 +9,14 @@
     "ikikarefarkı",
     "özdeşlikler",
     "lgs",
-    "matematiközdeşlik",
-    "antikasya",
-    "öğretmen"
+    "antikçin"
   ],
-  "yayin_zamani": null,
+  "yayin_zamani": "2026-11-21T21:00:00+03:00",
   "kaynak": "Kullanıcının gönderdiği ders kitabı görseli; Asya temalı özgün yeniden tasarım",
   "durum": "taslak",
   "kayit": [
-    "2026-11-17 oluşturuldu (Asya teması)"
-  ]
+    "2026-11-17 oluşturuldu (Asya teması)",
+    "2026-11-17T02:16:01.499Z takvime alındı: 2026-11-21T21:00:00+03:00"
+  ],
+  "ana_izgara": false
 }

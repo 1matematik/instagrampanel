@@ -9,14 +9,14 @@
     "ikikarefarkı",
     "özdeşlikler",
     "lgs",
-    "matematiközdeşlik",
-    "maya",
-    "öğretmen"
+    "maya"
   ],
-  "yayin_zamani": null,
+  "yayin_zamani": "2026-11-22T11:00:00+03:00",
   "kaynak": "Kullanıcının gönderdiği ders kitabı görseli; Amerika (Maya) temalı özgün yeniden tasarım",
   "durum": "taslak",
   "kayit": [
-    "2026-11-17 oluşturuldu (Amerika (Maya) teması)"
-  ]
+    "2026-11-17 oluşturuldu (Amerika (Maya) teması)",
+    "2026-11-17T02:16:01.500Z takvime alındı: 2026-11-22T11:00:00+03:00"
+  ],
+  "ana_izgara": false
 }

@@ -9,14 +9,14 @@
     "ikikarefarkı",
     "özdeşlikler",
     "lgs",
-    "matematiközdeşlik",
-    "antarktika",
-    "öğretmen"
+    "antarktika"
   ],
-  "yayin_zamani": null,
+  "yayin_zamani": "2026-11-23T21:15:00+03:00",
   "kaynak": "Kullanıcının gönderdiği ders kitabı görseli; Antarktika temalı özgün yeniden tasarım",
   "durum": "taslak",
   "kayit": [
-    "2026-11-17 oluşturuldu (Antarktika teması)"
-  ]
+    "2026-11-17 oluşturuldu (Antarktika teması)",
+    "2026-11-17T02:16:01.501Z takvime alındı: 2026-11-23T21:15:00+03:00"
+  ],
+  "ana_izgara": false
 }

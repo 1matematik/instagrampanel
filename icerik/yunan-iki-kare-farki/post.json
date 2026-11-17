@@ -9,15 +9,15 @@
     "ikikarefarkı",
     "özdeşlikler",
     "lgs",
-    "matematiközdeşlik",
-    "yunangeometrisi",
-    "öğretmen"
+    "antikyunan"
   ],
-  "yayin_zamani": null,
+  "yayin_zamani": "2026-11-18T16:30:00+03:00",
   "kaynak": "Kullanıcının gönderdiği ders kitabı görseli (şekil özgün olarak yeniden çizildi)",
   "durum": "onay-bekliyor",
   "kayit": [
     "2026-11-16T21:59:59.549Z oluşturuldu",
-    "2026-11-16T22:02:43.106Z render edildi, onay bekliyor"
-  ]
+    "2026-11-16T22:02:43.106Z render edildi, onay bekliyor",
+    "2026-11-17T02:16:01.492Z takvime alındı: 2026-11-18T16:30:00+03:00"
+  ],
+  "ana_izgara": false
 }
