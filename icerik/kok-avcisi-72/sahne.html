@@ -1,0 +1,120 @@
+<!doctype html><meta charset=utf-8>
+<style>
+html,body{margin:0;width:1080px;height:1920px;background:#071a33;overflow:hidden}
+text{font-family:'DejaVu Sans','FreeSans',sans-serif;font-weight:700}
+</style>
+<svg id=s width=1080 height=1920 viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id=bg x1=0 y1=0 x2=0 y2=1><stop offset=0 stop-color="#06162e"/><stop offset=1 stop-color="#10386c"/></linearGradient>
+ <pattern id=gr width=60 height=60 patternUnits=userSpaceOnUse><path d="M60,0 H0 V60" fill=none stroke="#8fb8ff" stroke-width=1.5 opacity=.13 /></pattern>
+ <filter id=glow x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation=9 result=b /><feMerge><feMergeNode in=b /><feMergeNode in=SourceGraphic /></feMerge></filter>
+</defs>
+<rect width=1080 height=1920 fill="url(#bg)"/>
+<rect width=1080 height=1920 fill="url(#gr)"/>
+<g id=main></g>
+</svg>
+<script>
+const NS='http://www.w3.org/2000/svg', main=document.getElementById('main');
+const el=(tag,attrs,parent=main)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e};
+const clamp=x=>Math.max(0,Math.min(1,x)), ramp=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)), mix=(c1,c2,k)=>'rgb('+hex(c1).map((v,i)=>Math.round(v+(hex(c2)[i]-v)*k)).join(',')+')';
+const GOLD='#f6c945', CY='#6ee7ff', WH='#f5f7fb', INK='#071a33', CELL='#1d4f93';
+function T(txt,x,y,size,fill=WH,extra={}){const t=el('text',{x,y,'font-size':size,fill,'text-anchor':'middle',...extra});t.textContent=txt;return t}
+function TS(parts,x,y,size,extra={}){const t=el('text',{x,y,'font-size':size,'text-anchor':'middle',...extra});parts.forEach(([s,c])=>{const sp=document.createElementNS(NS,'tspan');sp.setAttribute('fill',c);sp.textContent=s;t.appendChild(sp)});return t}
+function setT(t,op,sc,cx,cy){t.setAttribute('opacity',op);t.setAttribute('transform',`translate(${cx},${cy}) scale(${sc}) translate(${-cx},${-cy})`)}
+// ---- başlık
+const tag=T('MATEMATİK CANAVARI',540,300,50,GOLD,{'letter-spacing':5});
+const tit=T('KÖK AVCISI',540,420,124,WH,{filter:'url(#glow)'});
+// ---- büyük soru
+const fA=T('√72',540,760,190,WH,{filter:'url(#glow)'});
+const fB=TS([['√72 = √(',WH],['36',GOLD],[' · ',WH],['2',CY],[')',WH]],540,1090,76,{opacity:0});
+const fC=TS([['√72 = ',WH],['6',GOLD],['√2',CY]],540,1090,100,{opacity:0,filter:'url(#glow)'});
+// ---- ızgara 12x6
+const CS=70,X0=120,Y0=500;
+const gL=el('g',{}), gR=el('g',{});
+const cells=[];
+for(let r=0;r<6;r++)for(let c=0;c<12;c++){
+ const left=c<6, cx=X0+c*CS+CS/2, cy=Y0+r*CS+CS/2;
+ const rc=el('rect',{x:X0+c*CS+3,y:Y0+r*CS+3,width:CS-6,height:CS-6,rx:10,fill:CELL,stroke:'#6fa8ff','stroke-width':2,opacity:0},left?gL:gR);
+ cells.push({rc,cx,cy,left,d:(c+r)*0.06});
+}
+const outL=el('rect',{x:X0,y:Y0,width:420,height:420,rx:14,fill:'none',stroke:GOLD,'stroke-width':9,'stroke-dasharray':1680,'stroke-dashoffset':1680},gL);
+const outR=el('rect',{x:X0+420,y:Y0,width:420,height:420,rx:14,fill:'none',stroke:CY,'stroke-width':9,'stroke-dasharray':1680,'stroke-dashoffset':1680},gR);
+const l36=T('36',X0+210,Y0+210+48,140,INK,{opacity:0}); gL.appendChild(l36);
+const r36=T('36',X0+630,Y0+210+48,140,INK,{opacity:0}); gR.appendChild(r36);
+const cnt=T('72 kare',540,478,40,CY,{opacity:0});
+const bl=el('g',{opacity:0});
+el('line',{x1:X0+8,y1:Y0+462,x2:X0+412,y2:Y0+462,stroke:GOLD,'stroke-width':6,'stroke-linecap':'round'},bl);
+el('line',{x1:X0+428,y1:Y0+462,x2:X0+832,y2:Y0+462,stroke:CY,'stroke-width':6,'stroke-linecap':'round'},bl);
+T('6',X0+210,Y0+520,60,GOLD).setAttribute('opacity',1); bl.appendChild(main.lastChild);
+T('6',X0+630,Y0+520,60,CY); bl.appendChild(main.lastChild);
+// ---- canavar
+const M=el('g',{});
+el('ellipse',{cx:0,cy:178,rx:160,ry:18,fill:'#000',opacity:.28},M);
+el('ellipse',{cx:-85,cy:160,rx:56,ry:28,fill:'#5b3fd6'},M); el('ellipse',{cx:85,cy:160,rx:56,ry:28,fill:'#5b3fd6'},M);
+const armL=el('g',{},M), armR=el('g',{},M);
+el('ellipse',{cx:-190,cy:30,rx:40,ry:74,fill:'#6a4cf0'},armL); el('ellipse',{cx:190,cy:30,rx:40,ry:74,fill:'#6a4cf0'},armR);
+el('polygon',{points:'-120,-140 -88,-222 -44,-158',fill:GOLD},M); el('polygon',{points:'120,-140 88,-222 44,-158',fill:GOLD},M);
+el('ellipse',{cx:0,cy:0,rx:195,ry:172,fill:'#7b5cff'},M);
+el('ellipse',{cx:0,cy:70,rx:125,ry:98,fill:'#b3a6ff',opacity:.55},M);
+const wL=el('ellipse',{cx:-64,cy:-52,rx:48,ry:48,fill:'#fff'},M), wR=el('ellipse',{cx:64,cy:-52,rx:48,ry:48,fill:'#fff'},M);
+const pL=el('circle',{cx:-64,cy:-52,r:21,fill:'#14102e'},M), pR=el('circle',{cx:64,cy:-52,r:21,fill:'#14102e'},M);
+const hL=el('circle',{cx:-58,cy:-60,r:7,fill:'#fff'},M), hR=el('circle',{cx:70,cy:-60,r:7,fill:'#fff'},M);
+const mouth=el('ellipse',{cx:0,cy:52,rx:86,ry:14,fill:'#2a0f3d'},M);
+const tongue=el('ellipse',{cx:0,cy:60,rx:40,ry:0,fill:'#ff7a8a'},M);
+const teeth=[-48,0,48].map(x=>el('polygon',{points:'0,0 0,0 0,0',fill:'#fff'},M));
+const ring=el('circle',{cx:540,cy:1425,r:10,fill:'none',stroke:GOLD,'stroke-width':8,opacity:0});
+// ---- altyazı, CTA
+const SUB=[[0,2.9,'Kök Avcısı göreve hazır!'],[3.0,6.0,'Bugünün avı: √72'],[6.2,8.9,'72 tane birim kare çiz'],[9.0,11.8,'En büyük tam kare bloğu yakala: 36'],[12.0,14.6,'Tam kareyi yakala, dışarı at: 6!'],[14.8,17.0,'√72 = 6√2']];
+const subT=T('',540,1630,42,WH,{'paint-order':'stroke',stroke:INK,'stroke-width':11,'stroke-linejoin':'round'});
+const cta=el('g',{});el('rect',{x:130,y:1355,width:820,height:100,rx:50,fill:GOLD},cta);
+cta.appendChild(T('KAYDET • LGS\'DE LAZIM OLUR',540,1420,40,INK,{}));
+window.seek=t=>{
+ // başlık
+ const p0=ramp(t,.2,.8); setT(tag,p0,1,540,300); setT(tit,p0,.7+.3*back(p0),540,400);
+ // √72 büyük, sonra aşağı iner
+ const q=ramp(t,3.0,3.8), mv=eo(ramp(t,6.2,7.0)), fa=(1-ramp(t,11.8,12.2));
+ const fy=760+(1090-760)*mv, fs=190+(100-190)*mv;
+ fA.setAttribute('y',fy); fA.setAttribute('font-size',fs); fA.setAttribute('opacity',q*fa); 
+ const bsc=.5+.5*back(q); fA.setAttribute('transform',`translate(540,${fy}) scale(${bsc}) translate(-540,${-fy})`);
+ const b=ramp(t,11.9,12.6)*(1-ramp(t,14.6,15.0)); setT(fB,b,1,540,1090);
+ const c=ramp(t,14.8,15.5); setT(fC,c,.7+.3*back(c),540,1090);
+ // ızgara
+ cells.forEach(o=>{const k=ramp(t,6.3+o.d,6.75+o.d),s=back(k);
+  o.rc.setAttribute('opacity',k); o.rc.setAttribute('transform',`translate(${o.cx},${o.cy}) scale(${.2+.8*s}) translate(${-o.cx},${-o.cy})`);
+  const tk=o.left?ramp(t,9.0,9.8):ramp(t,9.8,10.6);
+  o.rc.setAttribute('fill',mix(CELL,o.left?GOLD:CY,tk*.9)); o.rc.setAttribute('stroke',mix('#6fa8ff',o.left?'#fff1b0':'#d8f8ff',tk))});
+ outL.setAttribute('stroke-dashoffset',1680*(1-eo(ramp(t,9.0,9.8)))); outR.setAttribute('stroke-dashoffset',1680*(1-eo(ramp(t,9.8,10.6))));
+ setT(l36,ramp(t,10.2,10.8),.8+.2*back(ramp(t,10.2,10.8)),X0+210,Y0+258); setT(r36,ramp(t,10.6,11.2),.8+.2*back(ramp(t,10.6,11.2)),X0+630,Y0+258);
+ setT(cnt,ramp(t,7.6,8.2)*(1-ramp(t,9.0,9.4)),1,540,478);
+ bl.setAttribute('opacity',ramp(t,11.0,11.6)*(1-ramp(t,12.2,12.5)));
+ // bloklar canavarın ağzına uçar
+ const mx=540,my=1425;
+ [[gL,X0+210,Y0+210,12.3,13.0],[gR,X0+630,Y0+210,12.9,13.6]].forEach(([g,cx,cy,a,e])=>{const p=eio(ramp(t,a,e));
+  g.setAttribute('transform',`translate(${cx+(mx-cx)*p},${cy+(my-cy)*p}) scale(${1-.93*p}) translate(${-cx},${-cy})`); g.setAttribute('opacity',1-ramp(p,.88,1))});
+ const rp=ramp(t,13.0,13.7)+ramp(t,13.6,14.3)*0; ring.setAttribute('opacity',(t>=13.0&&t<14.4)?1-ramp(t%0.65,0,.65)*.0-0:0);
+ const ph=((t-13.0)%0.6)/0.6; ring.setAttribute('r',10+120*eo(clamp(ph))); ring.setAttribute('opacity',(t>=13.0&&t<14.2)?1-clamp(ph):0);
+ // canavar
+ const appear=eo(ramp(t,.1,.9)), gone=ramp(t,16.8,17.4);
+ const bob=6*Math.sin(t*3.1), sq=1-.05*Math.abs(Math.sin((t-12.3)*8))*(t>12.3&&t<14.3?1:0);
+ M.setAttribute('transform',`translate(540,${1370+bob+260*(1-appear)+120*gone}) scale(${.95*sq},${.95/sq})`); M.setAttribute('opacity',appear*(1-gone));
+ let open=.08+.05*Math.sin(t*2)**2;
+ if(t>=11.6&&t<12.3) open=.08+.85*ramp(t,11.6,12.2); else if(t>=12.3&&t<14.2) open=.2+.5*Math.abs(Math.sin((t-12.3)*8)); else if(t>=14.8&&t<17) open=.25;
+ const ry=10+open*66; mouth.setAttribute('ry',ry); tongue.setAttribute('cy',52+open*30); tongue.setAttribute('ry',open*22);
+ const top=52-ry+3; [-48,0,48].forEach((x,i)=>teeth[i].setAttribute('points',`${x-15},${top} ${x+15},${top} ${x},${top+24*Math.min(1,open*3)}`));
+ const ph2=(t%3.2), blink=Math.max(0,1-Math.abs((ph2-3.1)/.09)); 
+ [wL,wR].forEach(w=>w.setAttribute('ry',48*(1-.9*blink)));
+ const look=(t>3&&t<14.6)?-13:2, lx=Math.sin(t*.9)*3;
+ [[pL,-64],[pR,64]].forEach(([p,x])=>{p.setAttribute('cx',x+lx);p.setAttribute('cy',-52+look);p.setAttribute('opacity',1-blink)});
+ hL.setAttribute('cx',-58+lx);hL.setAttribute('cy',-60+look);hR.setAttribute('cx',70+lx);hR.setAttribute('cy',-60+look);hL.setAttribute('opacity',1-blink);hR.setAttribute('opacity',1-blink);
+ armL.setAttribute('transform',`rotate(${6*Math.sin(t*3)} -150 -10)`);
+ const wave=(t>14.8)?-35-25*Math.sin((t-14.8)*9):6*Math.sin(t*3+1); armR.setAttribute('transform',`rotate(${wave} 150 -10)`);
+ // altyazı + CTA
+ const sub=SUB.find(s=>t>=s[0]&&t<s[1]); subT.textContent=sub?sub[2]:''; subT.setAttribute('opacity',sub?Math.min(ramp(t,sub[0],sub[0]+.25),1-ramp(t,sub[1]-.2,sub[1])):0);
+ const cp=ramp(t,17.2,17.7), pul=1+.03*Math.sin((t-17.2)*8)*cp; cta.setAttribute('opacity',cp);
+ cta.setAttribute('transform',`translate(540,1405) scale(${(.8+.2*back(cp))*pul}) translate(-540,-1405)`);
+};
+seek(0);
+</script>

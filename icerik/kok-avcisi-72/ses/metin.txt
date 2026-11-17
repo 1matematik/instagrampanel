@@ -1,0 +1,7 @@
+Matematik Canavarı: Kök Avcısı göreve hazır!
+Bugünün avı: kök yetmiş iki.
+Yetmiş iki tane kare çizelim!
+En büyük tam kare bloğu yakala: otuz altı!
+Tam kareyi yakala, dışarı at: altı! İki blok var, içeride kalır!
+Yani kök yetmiş iki, eşittir, altı kök iki!
+Kaydet, yarın yeni av!
