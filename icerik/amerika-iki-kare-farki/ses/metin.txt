@@ -1,0 +1,7 @@
+Maya çağında formül yoktu... şekil vardı!
+a kenarlı kareden, b kenarlı kareyi çıkar!
+Kalan parçayı köşegenden ikiye böl!
+Şimdi parçaları yeniden diz... ve işte dikdörtgen!
+Kenarları: a artı b ve a eksi b.
+Yani a kare eksi b kare, eşittir, a artı b çarpı a eksi b!
+Kaydet, sınavda lazım olur!

@@ -3,7 +3,7 @@ name: sesli-video
 on:
   workflow_dispatch:
     inputs:
-      slug: {description: 'icerik klasörü adı', required: true, default: 'yunan-iki-kare-farki'}
+      slug: {description: 'icerik klasör adları (boşlukla ayırarak birden fazla: sırayla üretilir)', required: true, default: 'yunan-iki-kare-farki'}
       ses:  {description: 'Ses: tr-TR-AhmetNeural (erkek), tr-TR-EmelNeural (kadın) veya Gemini sesi (Puck, Kore...)', required: true, default: 'tr-TR-AhmetNeural'}
       stil: {description: 'Okuma stili (İngilizce komut; boş bırakılırsa varsayılan enerjik)', required: false, default: ''}
 permissions: {contents: write}
@@ -23,32 +23,36 @@ jobs:
       - name: Seslendir, senkronla, üret
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          SLUG: ${{ inputs.slug }}
+          SLUGS: ${{ inputs.slug }}
           SES: ${{ inputs.ses }}
           STIL: ${{ inputs.stil }}
           PLAYWRIGHT_PATH: ${{ github.workspace }}/node_modules/
         run: |
           set -e
-          D="icerik/$SLUG"
-          [ -f "$D/ses/metin.txt" ] || { echo "metin.txt yok"; exit 1; }
-          case "$SES" in
-            tr-TR-*) python3 ses/ahmet_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" ;;
-            *) if [ -n "$STIL" ]; then python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" "$STIL"; else python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES"; fi ;;
-          esac
-          python3 ses/senkron.py "$D"
-          python3 ses/muzik.py "$D" "$D/ses/ses_gercek.json"
-          node panel.mjs render "$SLUG"
-          ses/miksaj.sh "$D" kuru "$D/ses/voice.wav"
-          mkdir -p cikti && cp "$D/final.mp4" "cikti/$SLUG.mp4" && cp "$D/ses/sesler.json" "cikti/$SLUG-sesler.json"
+          mkdir -p cikti
+          for SLUG in $SLUGS; do
+            echo "=== $SLUG ==="
+            D="icerik/$SLUG"
+            [ -f "$D/ses/metin.txt" ] || { echo "metin.txt yok: $SLUG"; exit 1; }
+            case "$SES" in
+              tr-TR-*) python3 ses/ahmet_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" ;;
+              *) if [ -n "$STIL" ]; then python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" "$STIL"; else python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES"; fi ;;
+            esac
+            python3 ses/senkron.py "$D"
+            python3 ses/muzik.py "$D" "$D/ses/ses_gercek.json"
+            node panel.mjs render "$SLUG"
+            ses/miksaj.sh "$D" kuru "$D/ses/voice.wav"
+            cp "$D/final.mp4" "cikti/$SLUG.mp4" && cp "$D/ses/sesler.json" "cikti/$SLUG-sesler.json"
+            sleep 5
+          done
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.slug }}
+          name: videolar
           path: cikti/
       - name: Önizleme dalına yükle (tarayıcıda izlemek için)
         env:
-          SLUG: ${{ inputs.slug }}
         run: |
-          mkdir -p /tmp/onizleme && cp "cikti/$SLUG.mp4" /tmp/onizleme/
+          mkdir -p /tmp/onizleme && cp cikti/*.mp4 /tmp/onizleme/
           cd /tmp/onizleme
           git init -q -b onizleme
           git config user.name "panel-bot" && git config user.email "bot@users.noreply.github.com"

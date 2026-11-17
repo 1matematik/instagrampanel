@@ -1,0 +1,137 @@
+<!doctype html><meta charset=utf-8>
+<style>
+html,body{margin:0;width:1080px;height:1920px;background:#06201f;overflow:hidden}
+text{font-family:'DejaVu Serif','FreeSerif',serif;font-weight:700}
+</style>
+<svg id=s width=1080 height=1920 viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id=bg x1=0 y1=0 x2=0 y2=1><stop offset=0 stop-color="#06201f"/><stop offset=.42 stop-color="#0d4d45"/><stop offset=.8 stop-color="#1d7a4a"/><stop offset=1 stop-color="#f2a33a"/></linearGradient>
+ <radialGradient id=sun cx=.5 cy=.5 r=.5><stop offset=0 stop-color="#ffb45a" stop-opacity=.75/><stop offset=.5 stop-color="#ff8a3d" stop-opacity=.35/><stop offset=1 stop-color="#ff8a3d" stop-opacity=0/></radialGradient>
+ <pattern id=mea width=48 height=48 patternUnits=userSpaceOnUse><path d="M0,48 V24 H12 V36 H24 V12 H36 V24 H48" fill=none stroke="#f6c24b" stroke-width=6 /><path d="M0,48 H48" stroke="#2bb3a3" stroke-width=6 /></pattern>
+ <filter id=glow x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation=10 result=b /><feMerge><feMergeNode in=b /><feMergeNode in=SourceGraphic /></feMerge></filter>
+</defs>
+<rect width=1080 height=1920 fill="url(#bg)"/>
+<!-- sütunlar -->
+<g id=stars fill="#fff1cf"></g>
+<circle cx=540 cy=1600 r=330 fill="url(#sun)"/>
+<g id=pyr></g>
+<g id=cols opacity=0.14 fill="#fff1cf"></g>
+<!-- Mısır bantları -->
+<rect id=m1 x=0 y=130 width=1080 height=48 fill="url(#mea)"/>
+<rect id=m2 x=0 y=1740 width=1080 height=48 fill="url(#mea)"/>
+<g id=dunes></g>
+<g id=main></g>
+</svg>
+<script>
+const NS='http://www.w3.org/2000/svg', main=document.getElementById('main');
+const el=(tag,attrs,parent=main)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e};
+const clamp=x=>Math.max(0,Math.min(1,x)), ramp=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+// tema dekoru
+const stars=document.getElementById('stars');
+for(let i=0;i<36;i++){const x=(i*389)%1040+20,y=(i*233)%640+210;el('circle',{cx:x,cy:y,r:(i%3)+1.2,opacity:.25+(i%4)*.15},stars)}
+const pyr=document.getElementById('pyr');
+function step(cx,by,w,tiers,c){let y=by;const th=56;for(let i=0;i<tiers;i++){const ww=w*(1-i/(tiers+.6));el('rect',{x:cx-ww/2,y:y-th,width:ww,height:th,fill:c},pyr);el('rect',{x:cx-ww/2,y:y-th,width:ww,height:8,fill:'#000',opacity:.2},pyr);y-=th}
+ el('rect',{x:cx-34,y:y-46,width:68,height:46,fill:c},pyr);el('rect',{x:cx-12,y:y-34,width:24,height:34,fill:'#06201f'},pyr);
+ el('polygon',{points:`${cx-22},${by} ${cx+22},${by} ${cx+10},${by-th*tiers} ${cx-10},${by-th*tiers}`,fill:'#000',opacity:.25},pyr)}
+step(540,1740,700,6,'#2a3b2e');
+function leaf(x,by,s,fl){for(let i=0;i<6;i++){const a=-Math.PI/2+(i-2.5)*.42*fl;el('ellipse',{cx:x+Math.cos(a)*90*s,cy:by+Math.sin(a)*110*s,rx:26*s,ry:78*s,fill:'#052a1c',transform:`rotate(${a*180/Math.PI+90} ${x+Math.cos(a)*90*s} ${by+Math.sin(a)*110*s})`},pyr)}}
+leaf(80,1730,1.5,1);leaf(1010,1730,1.5,1);leaf(240,1760,1,1);leaf(860,1760,1,1);
+const cols=document.getElementById('cols');
+[[30],[960]].forEach(([x])=>{el('rect',{x:x+10,y:260,width:70,height:1440,rx:6},cols);for(let r=0;r<10;r++){el('rect',{x:x+22,y:300+r*140,width:46,height:46,fill:'#06201f'},cols);el('circle',{cx:x+45,cy:323+r*140,r:10,fill:'#fff3d6'},cols)}});
+cols.setAttribute('opacity',.16);
+const dn=document.getElementById('dunes');
+el('path',{d:'M0,1790 Q270,1740 540,1790 T1080,1775 L1080,1920 L0,1920 Z',fill:'#0b2e1b'},dn);
+el('path',{d:'M0,1850 Q300,1805 620,1850 T1080,1842 L1080,1920 L0,1920 Z',fill:'#04170e'},dn);
+// renkler
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)), mix=(c1,c2,k)=>'rgb('+hex(c1).map((v,i)=>Math.round(v+(hex(c2)[i]-v)*k)).join(',')+')';
+const SAND='#f2a33a', AEG='#2bb3a3', TERRA='#d9473b', NEUT='#f1e4c3', MARB='#fff3d6', GOLD='#f6c24b';
+// geometri
+const a=640,b=220,h=a-b,S0=[220,520],R0=[110,660];
+const abs=(p,o)=>p.map(q=>[q[0]+o[0],q[1]+o[1]]);
+const polyR=abs([[b,0],[a,0],[a,a],[b,b]],S0), polyB=abs([[0,b],[b,b],[a,a],[0,a]],S0), polyQ=abs([[0,0],[b,0],[b,b],[0,b]],S0);
+const destL=abs([[0,0],[a,0],[b,h],[0,h]],R0), destR=abs([[a,0],[a+b,0],[a+b,h],[b,h]],R0);
+const cen=p=>[p.reduce((s,q)=>s+q[0],0)/p.length,p.reduce((s,q)=>s+q[1],0)/p.length];
+function fit(src,dst){const cs=cen(src),cd=cen(dst);let best=null;
+ for(const rev of [false,true])for(let sh=0;sh<4;sh++){let d=dst.slice();if(rev)d.reverse();d=d.map((_,i)=>d[(i+sh)%4]);
+  for(const refl of [false,true]){let sxy=0,sd=0;const S=src.map(p=>[(refl?-1:1)*(p[0]-cs[0]),p[1]-cs[1]]);
+   S.forEach((s,i)=>{const e=[d[i][0]-cd[0],d[i][1]-cd[1]];sxy+=s[0]*e[1]-s[1]*e[0];sd+=s[0]*e[0]+s[1]*e[1]});
+   const th=Math.atan2(sxy,sd),c=Math.cos(th),sn=Math.sin(th);let err=0;
+   S.forEach((s,i)=>{const e=[d[i][0]-cd[0],d[i][1]-cd[1]];err+=(c*s[0]-sn*s[1]-e[0])**2+(sn*s[0]+c*s[1]-e[1])**2});
+   if(!best||err<best.err-1e-6||(Math.abs(err-best.err)<1e-6&&!refl&&best.refl))best={th,refl,err,cs,cd}}}
+ return best}
+const o1=[fit(polyR,destR),fit(polyB,destL)], o2=[fit(polyR,destL),fit(polyB,destR)];
+const cost=o=>o.reduce((s,f)=>s+Math.abs(f.th)+(f.err>1e-3?1e6:0),0);
+const FITS=cost(o1)<=cost(o2)?o1:o2;
+const pts=p=>p.map(q=>q.join(',')).join(' ');
+// katman: tüm kare (giriş animasyonu)
+const wrap=el('g',{}), pc=[S0[0]+a/2,S0[1]+a/2];
+const gR=el('g',{},wrap), gB=el('g',{},wrap), gQ=el('g',{},wrap);
+const mk=(g,poly,fill)=>el('polygon',{points:pts(poly),fill,stroke:MARB,'stroke-width':3,'stroke-linejoin':'round'},g);
+const pR=mk(gR,polyR,NEUT), pB=mk(gB,polyB,NEUT), pQ=mk(gQ,polyQ,TERRA);
+const seam=el('line',{x1:S0[0]+b,y1:S0[1]+b,x2:S0[0]+b,y2:S0[1]+b,stroke:GOLD,'stroke-width':7,'stroke-dasharray':'18 12','stroke-linecap':'round'},wrap);
+const ring=el('circle',{cx:R0[0]+(a+b)/2,cy:R0[1]+h/2,r:10,fill:'none',stroke:GOLD,'stroke-width':6},main);
+function T(txt,x,y,size,fill=MARB,extra={}){const t=el('text',{x,y,'font-size':size,fill,'text-anchor':'middle',...extra});t.textContent=txt;return t}
+function setT(t,op,sc=1,cx,cy){t.setAttribute('opacity',op);t.setAttribute('transform',`translate(${cx},${cy}) scale(${sc}) translate(${-cx},${-cy})`)}
+const eye=el('g',{opacity:0});el('circle',{r:22,fill:GOLD},eye);el('circle',{r:9,fill:'#06201f'},eye);for(let i=0;i<12;i++){const a=i*Math.PI/6;el('polygon',{points:`${Math.cos(a-.14)*30},${Math.sin(a-.14)*30} ${Math.cos(a+.14)*30},${Math.sin(a+.14)*30} ${Math.cos(a)*50},${Math.sin(a)*50}`,fill:GOLD},eye)}
+const header=T('KADİM AMERİKA GEOMETRİSİ',540,290,38,GOLD,{'letter-spacing':3});
+const greek=T('MAYA VE İNKA DİYARI',540,350,30,MARB,{'letter-spacing':8,opacity:.8});
+const title=T('a² − b² = ?',540,760,150,MARB,{filter:'url(#glow)'});
+const tsub=T('Taş piramitlerin geometrisi',540,860,42,GOLD);
+const lbA1=T('a',540,490,56,GOLD), lbA2=T('a',1130-S0[0]+30,S0[1]+a/2+20,56,GOLD), lbB=T('b',S0[0]+b/2,S0[1]+b/2+20,52,MARB);
+const lbSum=T('a + b',R0[0]+(a+b)/2,R0[1]+h+80,56,GOLD), lbDif=T('a − b',0,0,52,GOLD);
+const brB=el('line',{x1:R0[0],y1:R0[1]+h+30,x2:R0[0]+a+b,y2:R0[1]+h+30,stroke:GOLD,'stroke-width':5,'stroke-linecap':'round'});
+const brR=el('line',{x1:R0[0]+a+b+35,y1:R0[1],x2:R0[0]+a+b+35,y2:R0[1]+h,stroke:GOLD,'stroke-width':5,'stroke-linecap':'round'});
+const formula=T('a² − b² = (a + b)(a − b)',540,1255,64,MARB,{filter:'url(#glow)'});
+const uline=el('line',{x1:90,y1:1290,x2:990,y2:1290,stroke:GOLD,'stroke-width':6,'stroke-linecap':'round'});
+const cta=el('g',{});const ctaR=el('rect',{x:130,y:1355,width:820,height:100,rx:50,fill:'#fff3d6'},cta);
+const ctaT=T('KAYDET • SINAVDA LAZIM OLUR',540,1420,40,'#06201f',{});cta.appendChild(ctaT);
+const SUB=[[0,2.9,'Maya çağında formül yoktu, şekil vardı'],[3.0,6.0,'Kenarı a olan kareden kenarı b olan kareyi çıkar'],[6.2,8.9,'Kalan parçayı köşegenden ikiye böl'],[9.0,12.6,'Parçaları yeniden diz…'],[12.8,14.7,'Dikdörtgen oldu! Kenarlar: (a+b) ve (a−b)'],[14.8,17.0,'Alan: a² − b² = (a + b)(a − b)']];
+const subT=T('',540,1410,40,MARB,{'paint-order':'stroke',stroke:'#06201f','stroke-width':10,'stroke-linejoin':'round'});
+const starts=[9.0,9.7], DUR=3.0;
+function matFor(f,u,cx0,cy0,lift){const th=f.th*u, sx=f.refl?Math.cos(Math.PI*u):1, c=Math.cos(th), s=Math.sin(th);
+ const A=c*sx,Bm=s*sx,C=-s,D=c, cx=cx0+(f.cd[0]-cx0)*u, cy=cy0+(f.cd[1]-cy0)*u-lift*Math.sin(Math.PI*u);
+ return `matrix(${A} ${Bm} ${C} ${D} ${cx-(A*f.cs[0]+C*f.cs[1])} ${cy-(Bm*f.cs[0]+D*f.cs[1])})`}
+window.seek=t=>{
+ // başlık
+ const tp=ramp(t,.3,.9), tf=1-ramp(t,2.6,3.0);
+ setT(title,tp*tf,.6+.4*back(tp),540,720); setT(tsub,ramp(t,.9,1.4)*tf,1,540,860);
+ setT(header,ramp(t,0,.5),1,540,290); eye.setAttribute('transform','translate(540,188)'); eye.setAttribute('opacity',ramp(t,0,.6)*.9); setT(greek,ramp(t,.2,.7)*.8,1,540,350);
+ // kare girişi
+ const si=ramp(t,3.0,3.7), sc=.7+.3*eo(si);
+ wrap.setAttribute('opacity',eo(si)); wrap.setAttribute('transform',`translate(${pc[0]},${pc[1]}) scale(${sc}) translate(${-pc[0]},${-pc[1]})`);
+ // b² karesi çıkar
+ const q=eio(ramp(t,5.0,5.9));
+ gQ.setAttribute('transform',`translate(${-170*q},${-230*q}) rotate(${-25*q} ${S0[0]+b/2} ${S0[1]+b/2})`); gQ.setAttribute('opacity',1-ramp(t,5.4,5.9));
+ // renk ayrımı
+ const ck=ramp(t,7.2,7.9); pR.setAttribute('fill',mix(NEUT,SAND,ck)); pB.setAttribute('fill',mix(NEUT,AEG,ck));
+ // köşegen
+ const sp=eo(ramp(t,6.2,7.3)); seam.setAttribute('x2',S0[0]+b+(a-b)*sp); seam.setAttribute('y2',S0[1]+b+(a-b)*sp);
+ seam.setAttribute('opacity',1-ramp(t,8.9,9.3));
+ // parçalar
+ const sep=eo(ramp(t,7.6,8.4))*14, offs=[[sep,-sep],[-sep,sep]], P=[gR,gB];
+ P.forEach((g,i)=>{const u=eio(ramp(t,starts[i],starts[i]+DUR)); const f=FITS[i];
+  g.setAttribute('transform',u===0?`translate(${offs[i][0]},${offs[i][1]})`:matFor(f,u,f.cs[0]+offs[i][0],f.cs[1]+offs[i][1],70))});
+ // etiketler (başlangıç)
+ const lo=ramp(t,3.6,4.1)*(1-ramp(t,8.8,9.2));
+ setT(lbA1,lo,1,540,490); setT(lbA2,lo,1,S0[0]+a+50,S0[1]+a/2+20);
+ lbA2.setAttribute('x',S0[0]+a+50); lbA2.setAttribute('y',S0[1]+a/2+20);
+ setT(lbB,ramp(t,3.8,4.3)*(1-ramp(t,5.4,5.9)),1,S0[0]+b/2,S0[1]+b/2+20);
+ // yeni etiketler
+ const e1=ramp(t,12.8,13.3), e2=ramp(t,13.3,13.8);
+ setT(lbSum,e1,.8+.2*back(e1),R0[0]+(a+b)/2,R0[1]+h+80); brB.setAttribute('opacity',e1);
+ lbDif.setAttribute('opacity',e2);lbDif.setAttribute('transform',`translate(1046,${R0[1]+h/2}) rotate(-90) scale(${.8+.2*back(e2)})`); brR.setAttribute('opacity',e2);
+ // halka efekti (yerine oturma)
+ const rp=ramp(t,12.6,13.4); ring.setAttribute('r',10+260*eo(rp)); ring.setAttribute('opacity',rp>0?1-rp:0);
+ // formül
+ const fp=ramp(t,14.8,15.5); setT(formula,fp,.7+.3*back(fp),540,1255); uline.setAttribute('x2',90+900*eo(ramp(t,15.0,15.8))); uline.setAttribute('opacity',fp);
+ // CTA
+ const cp=ramp(t,17.0,17.5), pul=1+.03*Math.sin((t-17)*8)*cp; cta.setAttribute('opacity',cp);
+ cta.setAttribute('transform',`translate(540,1405) scale(${(.8+.2*back(cp))*pul}) translate(-540,-1405)`);
+ // altyazı
+ const sub=SUB.find(s=>t>=s[0]&&t<s[1]); subT.textContent=sub?sub[2]:''; subT.setAttribute('opacity',sub?Math.min(ramp(t,sub[0],sub[0]+.25),1-ramp(t,sub[1]-.2,sub[1])):0);
+ const fs=sub&&sub[2].length>34?34:40; subT.setAttribute('font-size',fs);
+};
+seek(0);
+</script>
