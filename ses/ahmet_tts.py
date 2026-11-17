@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Microsoft Edge nöral sesleri (ücretsiz, anahtarsız) ile her cümleyi ayrı WAV yapar.
-Kullanım: python3 edge_tts.py <metin.txt> <cikti-klasoru> [ses=tr-TR-AhmetNeural] [hiz=+8%] [perde=+0Hz]
+Kullanım: python3 ahmet_tts.py <metin.txt> <cikti-klasoru> [ses=tr-TR-AhmetNeural] [hiz=+8%] [perde=+0Hz]
 Çıktı: cumle-N.wav + sesler.json (gemini_tts.py ile aynı biçim)."""
 import sys, os, json, asyncio, subprocess
 import edge_tts

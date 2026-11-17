@@ -32,7 +32,7 @@ jobs:
           D="icerik/$SLUG"
           [ -f "$D/ses/metin.txt" ] || { echo "metin.txt yok"; exit 1; }
           case "$SES" in
-            tr-TR-*) python3 ses/edge_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" ;;
+            tr-TR-*) python3 ses/ahmet_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" ;;
             *) if [ -n "$STIL" ]; then python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES" "$STIL"; else python3 ses/gemini_tts.py "$D/ses/metin.txt" "$D/ses" "$SES"; fi ;;
           esac
           python3 ses/senkron.py "$D"
