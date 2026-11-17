@@ -49,6 +49,8 @@ jobs:
         with:
           name: videolar
           path: cikti/
+      - name: Filigran ekle (hareketli saydam logo)
+        run: python3 yayin/filigran.py cikti/*.mp4
       - name: Yayın klasörüne kaydet (main)
         run: |
           git checkout -- icerik
