@@ -12,7 +12,11 @@
     "antikçin"
   ],
   "kaynak": "Özgün çizim",
-  "durum": "taslak",
+  "durum": "onaylandi",
   "ana_izgara": false,
-  "kayit": []
+  "kayit": [
+    "2026-11-17T20:37:00.888670Z takvime alındı: 2026-11-18T20:05:00+03:00",
+    "2026-11-17T20:37:00.888670Z kullanıcı onayladı (seri toplu onayı, 17 Kas gecesi)"
+  ],
+  "yayin_zamani": "2026-11-18T20:05:00+03:00"
 }
