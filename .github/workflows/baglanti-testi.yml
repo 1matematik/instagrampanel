@@ -14,3 +14,9 @@ jobs:
           curl -s "https://graph.facebook.com/v21.0/${IG_USER_ID}?fields=username,media_count&access_token=${IG_TOKEN}" | sed 's/access_token=[^"&]*/***/g'
           echo; echo "--- Video adresi herkese açık mı?"
           curl -sI "https://raw.githubusercontent.com/${{ github.repository }}/main/yayin/video/yunan-iki-kare-farki.mp4" | head -5
+          echo; echo "--- Son paylaşımlar"
+          curl -s "https://graph.facebook.com/v21.0/${IG_USER_ID}/media?fields=permalink,timestamp,media_product_type,caption&limit=10&access_token=${IG_TOKEN}" | python3 -c "
+          import sys,json
+          d=json.load(sys.stdin)
+          if 'data' not in d: print(d)
+          for m in d.get('data',[]): print(m.get('timestamp'),m.get('media_product_type'),m.get('permalink'),(m.get('caption') or '')[:40].replace(chr(10),' '))"
