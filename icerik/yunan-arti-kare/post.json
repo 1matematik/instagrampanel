@@ -1,0 +1,12 @@
+{
+  "baslik": "Artı b nin karesi özdeşliği: Yunan geometrisiyle kanıt",
+  "tur": "uyarlama",
+  "sure": 20,
+  "fps": 30,
+  "caption": "(a + b)² neden a² + 2ab + b²? 🏛️\nAntik Yunan geometricileri özdeşlikleri formülle değil, alan keserek kanıtlardı.\nKenarı a+b olan karenin içini 4 parçaya böl: a², b² ve iki tane ab!\n\nKaydet, sınavdan önce tekrar bak 📌\n\nHer gün matematik için takip et 👆",
+  "hashtagler": ["matematik","artıbnikaresi","özdeşlikler","lgs","antikyunan"],
+  "kaynak": "Özgün çizim (Yunan geometrik kanıtı)",
+  "durum": "taslak",
+  "ana_izgara": false,
+  "kayit": []
+}
