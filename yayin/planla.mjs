@@ -24,6 +24,24 @@ const pad=n=>String(n).padStart(2,'0');
 const trtNow=new Date(Date.now()+3*3600e3);
 let gun=opt.baslangic? new Date(opt.baslangic+'T00:00:00Z') : new Date(Date.UTC(trtNow.getUTCFullYear(),trtNow.getUTCMonth(),trtNow.getUTCDate()+1));
 const plan=[]; let idx=0;
+// --gun-ici=16:00-22:00 : tüm içerikleri BAŞLANGIÇ gününe, bu pencerenin içine yay.
+// Aralıklar yoğunluk ağırlığına göre ayarlanır: yoğun saatlerde paylaşımlar sıklaşır, durgun saatlerde seyrekleşir.
+if(opt['gun-ici']){
+  const [a,b]=opt['gun-ici'].split('-').map(t=>{const [h,m]=t.split(':').map(Number);return h*60+m;});
+  // 30 dk'lık dilimlerin ağırlığı (TRT): okul çıkışı ve akşam yoğun, akşam yemeği saatleri durgun
+  const w=m=>{ const h=m/60; if(h>=16&&h<17.5) return 3; if(h>=17.5&&h<19.5) return 1; if(h>=19.5&&h<20.5) return 2; if(h>=20.5&&h<22.5) return 3; if(h>=12&&h<14) return 3; return 1; };
+  const bins=[]; for(let m=a;m<b;m+=30) bins.push([m,w(m)]);
+  const tot=bins.reduce((x,y)=>x+y[1],0), n=slugs.length, MINGAP=30;
+  let prev=-1e9;
+  for(let i=0;i<n;i++){
+    let t=tot*(i+0.5)/n, cum=0, dk=a;
+    for(const [m,wt] of bins){ if(cum+wt>=t){ dk=m+30*(t-cum)/wt; break; } cum+=wt; }
+    dk=Math.round(dk/5)*5; if(dk-prev<MINGAP) dk=prev+MINGAP; prev=dk;
+    const g=gun, iso=`${g.getUTCFullYear()}-${pad(g.getUTCMonth()+1)}-${pad(g.getUTCDate())}T${pad(Math.floor(dk/60))}:${pad(dk%60)}:00+03:00`;
+    plan.push({slug:slugs[i],iso});
+  }
+  idx=slugs.length;
+}
 while(idx<slugs.length){
   const d=gun.getUTCDay(), saatler=(d===0||d===6)?PENCERE.sonu:PENCERE.hafta;
   for(let k=0;k<GUNLUK && idx<slugs.length;k++){
