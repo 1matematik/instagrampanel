@@ -1,0 +1,7 @@
+Eski Asya'da şekil, formülden önce gelirdi!
+Kenarı a artı b olan bir kare çiz!
+İçini iki çizgiyle dört parçaya böl!
+Köşelerde a kare ve b kare duruyor!
+Ortada iki tane de a çarpı b dikdörtgeni var!
+Yani a artı b nin karesi, a kare artı iki a b artı b kare!
+Kaydet, sınavda lazım olur!

@@ -1,0 +1,101 @@
+<!doctype html><meta charset=utf-8>
+<style>
+html,body{margin:0;width:1080px;height:1920px;background:#1b0f2e;overflow:hidden}
+text{font-family:'DejaVu Serif','FreeSerif',serif;font-weight:700}
+</style>
+<svg id=s width=1080 height=1920 viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id=bg x1=0 y1=0 x2=0 y2=1><stop offset=0 stop-color="#1b0f2e"/><stop offset=.42 stop-color="#5a1f3a"/><stop offset=.8 stop-color="#c4501f"/><stop offset=1 stop-color="#f0a04b"/></linearGradient>
+ <radialGradient id=sun cx=.5 cy=.5 r=.5><stop offset=0 stop-color="#ffb45a" stop-opacity=.75/><stop offset=.5 stop-color="#ff8a3d" stop-opacity=.35/><stop offset=1 stop-color="#ff8a3d" stop-opacity=0/></radialGradient>
+ <pattern id=mea width=48 height=48 patternUnits=userSpaceOnUse>
+  <path d="M0,48 L24,8 L48,48 Z" fill="#e8b04a"/><path d="M12,48 L24,28 L36,48 Z" fill="#3fb8af"/></pattern>
+ <filter id=glow x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation=10 result=b /><feMerge><feMergeNode in=b /><feMergeNode in=SourceGraphic /></feMerge></filter>
+</defs>
+<rect width=1080 height=1920 fill="url(#bg)"/>
+<!-- sütunlar -->
+<g id=stars fill="#fff1cf"></g>
+<circle cx=540 cy=1650 r=360 fill="url(#sun)"/>
+<g id=pyr></g>
+<g id=cols opacity=0.14 fill="#fff1cf"></g>
+<!-- Mısır bantları -->
+<rect id=m1 x=0 y=130 width=1080 height=48 fill="url(#mea)"/>
+<rect id=m2 x=0 y=1740 width=1080 height=48 fill="url(#mea)"/>
+<g id=dunes></g>
+<g id=main></g>
+</svg>
+<script>
+const NS='http://www.w3.org/2000/svg', main=document.getElementById('main');
+const el=(tag,attrs,parent=main)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e};
+const clamp=x=>Math.max(0,Math.min(1,x)), ramp=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+// yıldızlar, piramitler, dikilitaşlar, kumullar
+const stars=document.getElementById('stars');
+for(let i=0;i<46;i++){const x=(i*397)%1040+20,y=(i*211)%620+200;el('circle',{cx:x,cy:y,r:(i%3)+1.2,opacity:.25+(i%4)*.15},stars)}
+const pyr=document.getElementById('pyr');
+[[130,1740,330,260,'#7a2a3a'],[880,1740,300,230,'#7a2a3a'],[500,1740,560,330,'#5a1f3a']].forEach(([cx,by,w,h,c])=>{
+ el('polygon',{points:`${cx-w/2},${by} ${cx},${by-h} ${cx+w/2},${by}`,fill:c},pyr);
+ el('polygon',{points:`${cx},${by-h} ${cx+w/2},${by} ${cx+w*.08},${by}`,fill:'#000',opacity:.22},pyr)});
+const cols=document.getElementById('cols');
+[[30],[960]].forEach(([x])=>{el('polygon',{points:`${x+8},1700 ${x+82},1700 ${x+68},330 ${x+45},250 ${x+22},330`},cols);
+ for(let i=0;i<9;i++)el('rect',{x:x+30,y:420+i*120,width:30,height:8,fill:'#1b0f2e'},cols)});
+const dn=document.getElementById('dunes');
+el('path',{d:'M0,1800 Q270,1730 540,1790 T1080,1770 L1080,1920 L0,1920 Z',fill:'#8a3a1c'},dn);
+el('path',{d:'M0,1850 Q300,1800 620,1850 T1080,1840 L1080,1920 L0,1920 Z',fill:'#5a2314'},dn);
+// renkler
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)), mix=(c1,c2,k)=>'rgb('+hex(c1).map((v,i)=>Math.round(v+(hex(c2)[i]-v)*k)).join(',')+')';
+const SAND='#e8b04a', AEG='#3fb8af', TERRA='#c8442e', NEUT='#f3e2b3', MARB='#fff1cf', GOLD='#f2c14e';
+
+function T(txt,x,y,size,fill=MARB,extra={}){const t=el('text',{x,y,'font-size':size,fill,'text-anchor':'middle',...extra});t.textContent=txt;return t}
+function setT(t,op,sc=1,cx,cy){t.setAttribute('opacity',op);t.setAttribute('transform',`translate(${cx},${cy}) scale(${sc}) translate(${-cx},${-cy})`)}
+const eye=el('g',{opacity:0});el('path',{d:'M-40,0 Q0,-30 40,0 Q0,28 -40,0 Z',fill:'none',stroke:GOLD,'stroke-width':5},eye);el('circle',{r:9,fill:GOLD},eye);el('path',{d:'M-40,0 L-58,16 M0,28 L-6,52 M12,28 Q30,50 44,40',fill:'none',stroke:GOLD,'stroke-width':5,'stroke-linecap':'round'},eye);
+const header=T('ANTİK MISIR GEOMETRİSİ',540,290,40,GOLD,{'letter-spacing':4});
+const greek=T('PİRAMİTLERİN ÇAĞI',540,350,30,MARB,{'letter-spacing':8,opacity:.8});
+const title=T('(a + b)² = ?',540,760,150,MARB,{filter:'url(#glow)'});
+const tsub=T('Piramit çağında şekil konuşurdu',540,860,42,GOLD);
+const a=400,b=240,N=a+b,X0=220,Y0=500;
+const defs=[[0,0,a,a,SAND,'a²'],[a,a,b,b,AEG,'b²'],[a,0,b,a,TERRA,'ab'],[0,a,a,b,TERRA,'ab']];
+const wrap=el('g',{}), pcs=defs.map(d=>{const g=el('g',{},wrap);
+ const r=el('rect',{x:X0+d[0],y:Y0+d[1],width:d[2],height:d[3],fill:NEUT,stroke:MARB,'stroke-width':3,'stroke-linejoin':'round'},g);
+ const lab=T(d[5],X0+d[0]+d[2]/2,Y0+d[1]+d[3]/2+30,d[5]==='ab'?70:84,'#0a1a2a',{});g.appendChild(lab);return {g,r,lab,d}});
+const vl=el('line',{x1:X0+a,y1:Y0,x2:X0+a,y2:Y0,stroke:GOLD,'stroke-width':7,'stroke-dasharray':'18 12','stroke-linecap':'round'});
+const hl=el('line',{x1:X0,y1:Y0+a,x2:X0,y2:Y0+a,stroke:GOLD,'stroke-width':7,'stroke-dasharray':'18 12','stroke-linecap':'round'});
+const brT=el('line',{x1:X0,y1:Y0-34,x2:X0+N,y2:Y0-34,stroke:GOLD,'stroke-width':5,'stroke-linecap':'round'});
+const brL=el('line',{x1:X0-34,y1:Y0,x2:X0-34,y2:Y0+N,stroke:GOLD,'stroke-width':5,'stroke-linecap':'round'});
+const lbT=T('a + b',X0+N/2,Y0-52,52,GOLD), lbL=T('a + b',0,0,52,GOLD);
+const lbA=T('a',X0+a/2,Y0+N+60,48,MARB), lbB=T('b',X0+a+b/2,Y0+N+60,48,MARB);
+const ring=el('circle',{cx:X0+N/2,cy:Y0+N/2,r:10,fill:'none',stroke:GOLD,'stroke-width':6});
+const formula=T('(a + b)² = a² + 2ab + b²',540,1255,64,MARB,{filter:'url(#glow)'});
+const uline=el('line',{x1:90,y1:1290,x2:990,y2:1290,stroke:GOLD,'stroke-width':6,'stroke-linecap':'round'});
+const cta=el('g',{});el('rect',{x:130,y:1355,width:820,height:100,rx:50,fill:'#fff1cf'},cta);
+cta.appendChild(T('KAYDET • SINAVDA LAZIM OLUR',540,1420,40,'#2b0f3a',{}));
+const SUB=[[0, 2.9, "Piramit çağında formül yoktu, şekil vardı"], [3.0, 6.0, "Kenarı a + b olan bir kare çiz"], [6.2, 8.9, "İçini iki çizgiyle dört parçaya böl"], [9.0, 11.8, "Köşelerde a² ve b² duruyor"], [12.0, 14.6, "Ortada iki tane a·b dikdörtgeni var"], [14.8, 17.0, "(a+b)² = a² + 2ab + b²"]];
+const subT=T('',540,1410,40,MARB,{'paint-order':'stroke',stroke:'#2b0f3a','stroke-width':10,'stroke-linejoin':'round'});
+window.seek=t=>{
+ const tp=ramp(t,.3,.9), tf=1-ramp(t,2.6,3.0);
+ setT(title,tp*tf,.6+.4*back(tp),540,720); setT(tsub,ramp(t,.9,1.4)*tf,1,540,860);
+ setT(header,ramp(t,0,.5),1,540,290); eye.setAttribute('transform','translate(540,188)'); eye.setAttribute('opacity',ramp(t,0,.6)*.9); setT(greek,ramp(t,.2,.7)*.8,1,540,350);
+ const si=ramp(t,3.0,3.8), sc=.7+.3*eo(si), pc=[X0+N/2,Y0+N/2];
+ wrap.setAttribute('opacity',eo(si));
+ const sep=eo(ramp(t,14.8,15.6))*16;
+ pcs.forEach(p=>{const d=p.d,ox=(d[0]===0?-1:1)*sep,oy=(d[1]===0?-1:1)*sep;p.g.setAttribute('transform',`translate(${ox},${oy})`)});
+ wrap.setAttribute('transform',`translate(${pc[0]},${pc[1]}) scale(${sc}) translate(${-pc[0]},${-pc[1]})`);
+ const ck1=ramp(t,9.0,9.9), ck2=ramp(t,12.0,12.9);
+ pcs.forEach((p,i)=>{const k=i<2?ck1:ck2; p.r.setAttribute('fill',mix(NEUT,p.d[4],k));
+  const lk=i<2?ramp(t,9.4,10.2):ramp(t,12.4,13.2); p.lab.setAttribute('opacity',lk); p.lab.setAttribute('transform',`translate(${X0+p.d[0]+p.d[2]/2},${Y0+p.d[1]+p.d[3]/2}) scale(${.7+.3*back(lk)}) translate(${-(X0+p.d[0]+p.d[2]/2)},${-(Y0+p.d[1]+p.d[3]/2)})`)});
+ const v=eo(ramp(t,6.2,7.4)), h=eo(ramp(t,7.4,8.6));
+ vl.setAttribute('y2',Y0+N*v); hl.setAttribute('x2',X0+N*h);
+ const lo=1-ramp(t,9.0,9.5); vl.setAttribute('opacity',lo); hl.setAttribute('opacity',lo);
+ const m=ramp(t,3.9,4.5); brT.setAttribute('opacity',m); brL.setAttribute('opacity',m);
+ setT(lbT,m,1,X0+N/2,Y0-52); lbL.setAttribute('opacity',m); lbL.setAttribute('transform',`translate(${X0-52},${Y0+N/2}) rotate(-90)`);
+ const sl=ramp(t,8.0,8.6); setT(lbA,sl,1,X0+a/2,Y0+N+60); setT(lbB,sl,1,X0+a+b/2,Y0+N+60);
+ const rp=ramp(t,12.9,13.7); ring.setAttribute('r',10+300*eo(rp)); ring.setAttribute('opacity',rp>0?1-rp:0);
+ const fp=ramp(t,14.8,15.5); setT(formula,fp,.7+.3*back(fp),540,1255); uline.setAttribute('x2',90+900*eo(ramp(t,15.0,15.8))); uline.setAttribute('opacity',fp);
+
+ const cp=ramp(t,17.2,17.7), pul=1+.03*Math.sin((t-17.2)*8)*cp; cta.setAttribute('opacity',cp);
+ cta.setAttribute('transform',`translate(540,1405) scale(${(.8+.2*back(cp))*pul}) translate(-540,-1405)`);
+ const sub=SUB.find(s=>t>=s[0]&&t<s[1]); subT.textContent=sub?sub[2]:''; subT.setAttribute('opacity',sub?Math.min(ramp(t,sub[0],sub[0]+.25),1-ramp(t,sub[1]-.2,sub[1])):0);
+ subT.setAttribute('font-size',sub&&sub[2].length>34?34:40);
+};
+seek(0);
+</script>

@@ -1,0 +1,7 @@
+Piramit çağında formül yoktu... şekil vardı!
+Kenarı a olan bir kare çiz!
+Sağdan ve alttan, b genişliğinde iki şerit çıkar!
+Ama köşedeki b kareyi iki kere çıkardık!
+Onu bir kere geri eklemeliyiz!
+Yani a eksi b nin karesi, a kare eksi iki a b artı b kare!
+Kaydet, sınavda lazım olur!
