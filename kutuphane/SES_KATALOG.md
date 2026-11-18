@@ -8,3 +8,13 @@ Dosyalar telif/boyut nedeniyle repoda değil; panelde `lib/depo/` altında tutul
 - **Kutlama/kalabalık:** applause (emircanalp, soumages), small-claps, crowd-with-a-slow-beat, crowd-laughing, 90s-sitcom-laugh-track, shrek_30-pop-wow
 - **Geçiş/sihir/gerilim:** primalhousemusic-swelling-transition, magical-sound-effect (19 sn), thunder, soundreality-fall-in / arcade-arped, binary-code-interface (98 sn, UI sesleri)
 - **Komik:** funny-comedy-sneaky-music, giggling, old-man-laughing, baby-crying, censor, halloween-funny-horror
+
+## Pixabay müzik listesi (kullanıcı önerisi, karışık kullanılacak)
+Durum: bağlantılar kayıtlı; mp3 dosyaları henüz kütüphanede DEĞİL (sandbox pixabay.com'a erişemiyor, dosyaların kullanıcıdan gelmesi gerekir).
+Kural: videolarda bu parçalar karışık/dönüşümlü kullanılır; narration üstünde düşük ses (~%12-15).
+- https://pixabay.com/users/ikoliks_aj-48415707/ (sanatçı sayfası)
+- https://pixabay.com/music/pop-upbeat-upbeat-music-627648/
+- https://pixabay.com/users/hitslab-47305729/ (kullanıcının en çok önerdiği sanatçı, öncelikli)
+- https://pixabay.com/music/corporate-upbeat-upbeat-music-602444/
+- https://pixabay.com/music/corporate-upbeat-corporate-632760/
+- https://pixabay.com/music/upbeat-upbeat-607558/
