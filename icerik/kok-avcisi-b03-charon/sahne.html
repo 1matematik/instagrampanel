@@ -114,7 +114,13 @@ const wink=el('path',{d:'M18,-128 Q46,-112 74,-128',fill:'none',stroke:'#14171c'
 const six=T('2',540,1215,150,GOLD,{opacity:0,filter:'url(#glow)'}), five=T('3',540,1215,150,GOLD,{opacity:0,filter:'url(#glow)'});
 const dun=TS([['Geçen cevap: ',CY],['√8 = ',WH],['2',GOLD],['√2',CY]],540,620,56,{opacity:0});
 // ---------- altyazı + CTA
-const nm=TS([['www.',WH],['sariakademi',GOLD],['.com',WH]],540,1792,40,{'letter-spacing':3,opacity:.95});
+document.querySelector('defs').insertAdjacentHTML('beforeend','<clipPath id=wbc><rect x=210 y=1740 width=660 height=80 rx=40 /></clipPath><linearGradient id=wgl x1=0 y1=0 x2=0 y2=1><stop offset=0 stop-color="#fff" stop-opacity=.34 /><stop offset=.5 stop-color="#fff" stop-opacity=.10 /><stop offset=1 stop-color="#9fd4ff" stop-opacity=.20 /></linearGradient>');
+const nmG=el('g',{}); el('rect',{x:210,y:1740,width:660,height:80,rx:40,fill:'url(#wgl)',stroke:'#ffffff','stroke-opacity':.8,'stroke-width':2.5},nmG);
+el('rect',{x:238,y:1745,width:604,height:28,rx:14,fill:'#fff',opacity:.15},nmG);
+el('path',{d:'M252,1817 Q540,1826 828,1817',fill:'none',stroke:CY,'stroke-width':2,opacity:.6},nmG);
+const wshG=el('g',{'clip-path':'url(#wbc)'},nmG), wsh=el('rect',{x:0,y:1720,width:70,height:120,fill:'#fff',opacity:.45,transform:'skewX(-20)'},wshG);
+const nm=TS([['www.',WH],['sariakademi',GOLD],['.com',WH]],540,1794,42,{'letter-spacing':3,filter:'url(#glow)'}); nmG.appendChild(nm);
+const WSP=[[210,1742],[872,1818],[700,1734],[380,1826]].map(([x,y])=>el('path',{d:`M${x},${y-14} L${x+3.5},${y-3.5} L${x+14},${y} L${x+3.5},${y+3.5} L${x},${y+14} L${x-3.5},${y+3.5} L${x-14},${y} L${x-3.5},${y-3.5}Z`,fill:'#fff'},nmG));
 const SUB=[[0, 3.0, "Geçen bölümün cevabı: √8 = 2√2"], [3.2, 6.3, "İlk av: √20 → 20 kare çiz"], [6.5, 9.1, "En büyük tam kare bloğu yakala: 4"], [9.3, 12.6, "Tam kareyi yakala, dışarı at: 2!"], [12.8, 16.6, "İkinci av: √27 → 9 · 3"], [16.8, 20.6, "Kenarı 3 → √27 = 3√3"], [20.8, 25.3, "Sıra sende: √45 = ?"], [25.5, 28.6, "Yarın yine buluşalım!"]];
 const subT=el('text',{x:540,y:1680,'font-size':46,'text-anchor':'middle','paint-order':'stroke',stroke:INK,'stroke-width':12,'stroke-linejoin':'round'});let _subKey=-1,_words=[];
 const cta=el('g',{}); document.querySelector('defs').insertAdjacentHTML('beforeend','<linearGradient id=gl x1=0 y1=0 x2=0 y2=1><stop offset=0 stop-color="#fff" stop-opacity=.42 /><stop offset=.5 stop-color="#fff" stop-opacity=.14 /><stop offset=1 stop-color="#9fd4ff" stop-opacity=.22 /></linearGradient><clipPath id=glc><rect x=130 y=1088 width=820 height=114 rx=57 /></clipPath><filter id=gsh x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation=14 /></filter>');
@@ -184,6 +190,8 @@ function extra(t){
  wink.setAttribute('opacity',wk?1:0); if(wk){eR.setAttribute('ry',2);[iR,pR,hR].forEach(e=>e.setAttribute('opacity',0));}
  const big=Math.max(...[6.5,20.8].map(k=>t>k&&t<k+1.2?Math.sin(Math.PI*(t-k)/1.2):0)); [iL,iR].forEach(e=>e.setAttribute('r',19+5*big)); [pL,pR].forEach(e=>e.setAttribute('r',10+4*big));
  [chL,chR].forEach(e=>e.setAttribute('opacity',.45+.25*Math.max(big,wk?1:0)));
+ wsh.setAttribute('x',300+(((t*330)%1700+1700)%1700)-300);
+ WSP.forEach((e,i)=>{const q=.5+.5*Math.sin(t*4+i*1.9), [x,y]=[[210,1742],[872,1818],[700,1734],[380,1826]][i]; e.setAttribute('opacity',q); e.setAttribute('transform',`translate(${x},${y}) scale(${.35+.65*q}) rotate(${t*50}) translate(${-x},${-y})`)});
  // cam buton: salto ile giriş, parıltı, yıldızlar
  const cq=ramp(t,26.8,27.6), fl=Math.cos(Math.PI*(1-eio(cq))), pl=1+.025*Math.sin((t-26.8)*7)*cq;
  cta.setAttribute('opacity',cq>0?1:0); cta.setAttribute('transform',`translate(540,1145) scale(${pl},${fl*pl}) translate(-540,-1145)`);
