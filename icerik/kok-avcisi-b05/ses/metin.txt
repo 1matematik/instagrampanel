@@ -1,0 +1,8 @@
+Merhaba, ben Matlemur! Geçen bölümün cevabı: kök yirmi sekiz, iki kök yedi!
+İlk av: kök iki yüz. İki yüz kare çiz!
+En büyük tam kare bloğu yakala: yüz!
+Tam kareyi yakala, dışarı at: on! İki blok var, iki içeride kalır!
+İkinci av: kök üç yüz! Üç yüz kare, yüzlük üç blok!
+Kenarı on! Yani kök üç yüz, eşittir, on kök üç!
+Sıra sende! Kök beş yüz kaç eder? Cevabı yorumlara yaz!
+Yarın yine buluşalım!
