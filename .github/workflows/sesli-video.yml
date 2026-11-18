@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       slug: {description: 'icerik klasör adları (boşlukla ayırarak birden fazla: sırayla üretilir)', required: true, default: 'yunan-iki-kare-farki'}
-      ses:  {description: 'Ses: tr-TR-AhmetNeural (erkek), tr-TR-EmelNeural (kadın) veya Gemini sesi (Puck, Kore...)', required: true, default: 'tr-TR-AhmetNeural'}
+      ses:  {description: 'Ses: tr-TR-AhmetNeural (erkek), tr-TR-EmelNeural (kadın) veya Gemini sesi (Puck, Kore...)', required: true, default: 'Charon'}
       stil: {description: 'Okuma stili (İngilizce komut; boş bırakılırsa varsayılan enerjik)', required: false, default: ''}
 permissions: {contents: write}
 jobs:

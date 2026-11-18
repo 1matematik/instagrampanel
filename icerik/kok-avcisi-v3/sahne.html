@@ -131,7 +131,7 @@ const topG=mk('g',{},svg);
 mk('rect',{width:1080,height:1920,fill:'url(#vg)'},topG);
 mk('rect',{x:60,y:78,width:960,height:8,rx:4,fill:'#ffffff',opacity:.15},topG);
 const pb=mk('rect',{x:60,y:78,width:0,height:8,rx:4,fill:GOLD},topG);
-const bol=mk('text',{x:540,y:200,'font-size':34,fill:CY,'text-anchor':'middle','letter-spacing':6},main);bol.textContent='BÖLÜM 1 / 16';
+const bol=mk('text',{x:540,y:200,'font-size':34,fill:CY,'text-anchor':'middle','letter-spacing':6},main);bol.textContent='BÖLÜM 1';
 const CF=[]; const BURSTS=[[10.6,540,1180,GOLD],[11.2,540,1150,'#fff1b0'],[18.0,540,1180,CY],[19.3,540,1120,GOLD],[12.0,540,1090,'#ffffff'],[26.0,540,760,GOLD],[26.4,300,900,CY],[26.4,780,900,GOLD]];
 BURSTS.forEach(([t0,x,y,c],bi)=>{for(let i=0;i<16;i++){const a=rnd()*6.28,v=250+rnd()*420;CF.push({e:mk('circle',{r:5+rnd()*8,fill:i%2?c:'#ffffff'},topG),t0,x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-200,});}});
 const ring=mk('circle',{fill:'none','stroke-width':8},topG);
