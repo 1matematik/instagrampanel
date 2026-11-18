@@ -1,0 +1,19 @@
+name: gemini-anahtar-test
+on: workflow_dispatch
+permissions: {contents: read}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Gemini sesi dene
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          mkdir -p /tmp/d
+          printf 'Merhaba, ben Matlemur. Artı b nin karesi, a kare artı iki a b artı b kare.\n' > /tmp/d/m.txt
+          python3 ses/gemini_tts.py /tmp/d/m.txt /tmp/d/out
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with: {name: ses-deneme, path: /tmp/d/out, retention-days: 1}
