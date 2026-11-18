@@ -1,5 +1,5 @@
 {
- "baslik": "Mathlemur: Kök Avcısı - √72 ve √50, sıra sende √98 (v3)",
+ "baslik": "Mathlemur Kök Avcısı - Bölüm 1: √72 ve √50",
  "tur": "özgün",
  "sure": 29,
  "fps": 30,
@@ -12,7 +12,8 @@
   "mathlemur"
  ],
  "kaynak": "Özgün Mathlemur karakteri ve kurgu",
- "durum": "taslak",
+ "durum": "onaylandi",
  "ana_izgara": false,
- "kayit": []
+ "kayit": [],
+ "yayin_zamani": "2026-11-20T12:40:00+03:00"
 }
