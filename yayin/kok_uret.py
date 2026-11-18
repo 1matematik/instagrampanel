@@ -82,6 +82,7 @@ def bolum(no,ex1,ex2,ss,prev):
      f"Sıra sende! Kök {soz(ss)} kaç eder? Cevabı yorumlara yaz!",
      "Yarın yine buluşalım!"]
     slug=f'kok-avcisi-b{no:02d}'; d=f'{R}/icerik/{slug}'; os.makedirs(d+'/ses',exist_ok=True)
+    import importlib.util as _u; _sp=_u.spec_from_file_location('v4',os.path.join(R,'yayin','v4_yama.py')); _m=_u.module_from_spec(_sp); _sp.loader.exec_module(_m); s=_m.yama(s)  # tasarım v4
     open(d+'/sahne.html','w').write(s); open(d+'/ses/metin.txt','w').write('\n'.join(metin)+'\n')
     j=dict(TPLJ); j['muzik_dosya']='kutuphane/muzik/'+MUZ[no%len(MUZ)]; j['muzik_baslangic']=6
     json.dump(j,open(d+'/ses.json','w'),ensure_ascii=False)
