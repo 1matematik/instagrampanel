@@ -1,0 +1,8 @@
+Merhaba, ben Matlemur! Geçen bölümün cevabı: kök sekiz, iki kök iki!
+İlk av: kök yirmi. Yirmi kare çiz!
+En büyük tam kare bloğu yakala: dört!
+Tam kareyi yakala, dışarı at: iki! Beş blok var, beş içeride kalır!
+İkinci av: kök yirmi yedi! Yirmi yedi kare, dokuzluk üç blok!
+Kenarı üç! Yani kök yirmi yedi, eşittir, üç kök üç!
+Sıra sende! Kök kırk beş kaç eder? Cevabı yorumlara yaz!
+Yarın yine buluşalım!
