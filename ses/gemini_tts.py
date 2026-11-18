@@ -4,8 +4,8 @@ Kullanım: GEMINI_API_KEY=... python3 gemini_tts.py <metin.txt> <cikti-klasoru> 
 Her boş olmayan satır bir cümledir. Çıktı: cumle-1.wav ... ve sesler.json (süreler)."""
 import sys, os, json, time, base64, wave, urllib.request, urllib.error
 txt, out = sys.argv[1], sys.argv[2]
-voice = sys.argv[3] if len(sys.argv) > 3 else 'Kore'
-style = sys.argv[4] if len(sys.argv) > 4 else 'Speak in clear, natural Turkish like a confident young male math teacher: warm, lively, steady pace, crisp pronunciation, emphasize the key words'
+voice = sys.argv[3] if len(sys.argv) > 3 else 'Charon'
+style = sys.argv[4] if len(sys.argv) > 4 else 'Speak in clear, correct Turkish like a calm, confident, warm male math teacher: articulate every word fully with proper Turkish pronunciation and stress, steady medium pace, short natural pauses between phrases, encouraging tone, gently emphasize the key words and numbers, never rush or swallow word endings'
 key = os.environ['GEMINI_API_KEY']
 MODELS = [m for m in [os.environ.get('GEMINI_TTS_MODEL'), 'gemini-2.5-flash-preview-tts', 'gemini-2.5-pro-preview-tts'] if m]
 os.makedirs(out, exist_ok=True)
