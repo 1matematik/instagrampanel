@@ -40,6 +40,7 @@ jobs:
             esac
             python3 ses/senkron.py "$D"
             python3 ses/muzik.py "$D" "$D/ses/ses_gercek.json"
+            python3 ses/muzik_dosya.py "$D"
             node panel.mjs render "$SLUG"
             ses/miksaj.sh "$D" kuru "$D/ses/voice.wav"
             cp "$D/final.mp4" "cikti/$SLUG.mp4" && cp "$D/ses/sesler.json" "cikti/$SLUG-sesler.json"
