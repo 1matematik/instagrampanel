@@ -12,11 +12,15 @@
     "antikçin"
   ],
   "kaynak": "Özgün çizim",
-  "durum": "onaylandi",
+  "durum": "yayinlandi",
   "ana_izgara": false,
   "kayit": [
     "2026-11-17T20:37:00.888670Z takvime alındı: 2026-11-18T20:05:00+03:00",
-    "2026-11-17T20:37:00.888670Z kullanıcı onayladı (seri toplu onayı, 17 Kas gecesi)"
+    "2026-11-17T20:37:00.888670Z kullanıcı onayladı (seri toplu onayı, 17 Kas gecesi)",
+    "2026-11-18T17:10:33.612Z yayın başladı",
+    "2026-11-18T17:11:21.494Z yayınlandı https://www.instagram.com/reel/Df5AsU7AuPl/"
   ],
-  "yayin_zamani": "2026-11-18T20:05:00+03:00"
+  "yayin_zamani": "2026-11-18T20:05:00+03:00",
+  "permalink": "https://www.instagram.com/reel/Df5AsU7AuPl/",
+  "yayin_id": "18125155069945461"
 }
