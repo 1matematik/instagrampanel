@@ -21,3 +21,5 @@ Kural: videolarda bu parçalar karışık/dönüşümlü kullanılır; narration
 
 ## Arşivdeki Pixabay müzikleri (repoda, workflow kullanabilir): kutuphane/muzik/
 - sub_clair-upbeat-607558.mp3 — "Upbeat" (Sub_Clair), 1:56, Pixabay lisansı. Kullanıcı arşive ekledi (18 Kas). Karışık kullanım listesindeki 607558 numaralı parça.
+- Arşive 18 Kas'ta eklenen 11 parça daha (kutuphane/muzik/, hepsi Pixabay): aberrantrealities-generally-joyful-261305 (2:08), alex_makemusic-summer-music-461169 (1:43), atlasaudio-short-trailer-617605 (2:04), audiocoffee-childrens-team-124790 (1:56), kulakovka-instagram-291452 (1:51), kulakovka-instagram-295898 (2:15), petrushkasound-upbeat-funky-background-music-428570 (2:09), thesilentthunder-happy-corporate-short-627011 (1:21), tunetank-happy-ukulele-for-children-349736 (1:55), white_records-background-perky-music-...-1min-163720 (1:00), white_records-cheerful-music-...-170013 (0:30).
+- Kullanım: ses.json'a "muzik_dosya" (+ opsiyonel "muzik_baslangic" sn) yazılır; ses/muzik_dosya.py müziği süreye kırpar. Seride karışık/dönüşümlü seçilecek.
