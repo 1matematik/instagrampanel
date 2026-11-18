@@ -18,3 +18,6 @@ Kural: videolarda bu parçalar karışık/dönüşümlü kullanılır; narration
 - https://pixabay.com/music/corporate-upbeat-upbeat-music-602444/
 - https://pixabay.com/music/corporate-upbeat-corporate-632760/
 - https://pixabay.com/music/upbeat-upbeat-607558/
+
+## Arşivdeki Pixabay müzikleri (repoda, workflow kullanabilir): kutuphane/muzik/
+- sub_clair-upbeat-607558.mp3 — "Upbeat" (Sub_Clair), 1:56, Pixabay lisansı. Kullanıcı arşive ekledi (18 Kas). Karışık kullanım listesindeki 607558 numaralı parça.
