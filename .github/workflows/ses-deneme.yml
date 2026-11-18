@@ -11,10 +11,9 @@ jobs:
       - env: {GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}"}
         run: |
           mkdir -p ses/ornekler
-          birlestir(){ ls $1/cumle-*.wav | sort -V | sed "s/^/file '/;s/$/'/" | sed "s#file '#file '$PWD/#" > $1/l.txt; ffmpeg -y -loglevel error -f concat -safe 0 -i $1/l.txt -af "apad=pad_dur=0.3" -b:a 128k ses/ornekler/$2.mp3; }
           for V in tr-TR-AhmetNeural en-US-AndrewMultilingualNeural en-US-BrianMultilingualNeural de-DE-FlorianMultilingualNeural fr-FR-RemyMultilingualNeural; do
-            python3 ses/ahmet_tts.py ses/deneme/metin.txt /tmp/$V $V +4% && birlestir /tmp/$V edge-$V || echo "HATA $V"; done
-          for V in Charon Puck Fenrir Orus Iapetus Algenib; do
-            python3 ses/gemini_tts.py ses/deneme/metin.txt /tmp/$V $V && birlestir /tmp/$V gemini-$V || echo "HATA $V"; done
+            python3 ses/ahmet_tts.py ses/deneme/metin.txt /tmp/$V $V +4% && python3 ses/deneme/birlestir.py /tmp/$V ses/ornekler/edge-$V.mp3 || echo "HATA $V"; done
+          for V in Charon Puck Orus Algenib; do
+            python3 ses/gemini_tts.py ses/deneme/metin.txt /tmp/$V $V && python3 ses/deneme/birlestir.py /tmp/$V ses/ornekler/gemini-$V.mp3 || echo "HATA $V"; done
           ls -la ses/ornekler
           git config user.name bot; git config user.email bot@x; git add ses/ornekler; git commit -qm "Ses örnekleri"; git pull -q --rebase; git push -q
