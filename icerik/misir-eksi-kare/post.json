@@ -12,11 +12,15 @@
     "antikmısır"
   ],
   "kaynak": "Özgün çizim",
-  "durum": "onaylandi",
+  "durum": "yayinlandi",
   "ana_izgara": false,
   "kayit": [
     "2026-11-17T20:37:00.888670Z takvime alındı: 2026-11-19T13:55:00+03:00",
-    "2026-11-17T20:37:00.888670Z kullanıcı onayladı (seri toplu onayı, 17 Kas gecesi)"
+    "2026-11-17T20:37:00.888670Z kullanıcı onayladı (seri toplu onayı, 17 Kas gecesi)",
+    "2026-11-19T10:58:00.153Z yayın başladı",
+    "2026-11-19T10:58:53.448Z yayınlandı https://www.instagram.com/reel/Df662DDjZYA/"
   ],
-  "yayin_zamani": "2026-11-19T13:55:00+03:00"
+  "yayin_zamani": "2026-11-19T13:55:00+03:00",
+  "permalink": "https://www.instagram.com/reel/Df662DDjZYA/",
+  "yayin_id": "18642571162065117"
 }
