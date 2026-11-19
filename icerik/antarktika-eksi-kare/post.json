@@ -12,11 +12,15 @@
     "antarktika"
   ],
   "kaynak": "Özgün çizim",
-  "durum": "onaylandi",
+  "durum": "yayinlandi",
   "ana_izgara": false,
   "kayit": [
     "2026-11-17T20:37:00.888670Z takvime alındı: 2026-11-19T21:55:00+03:00",
-    "2026-11-17T20:37:00.888670Z kullanıcı onayladı (seri toplu onayı, 17 Kas gecesi)"
+    "2026-11-17T20:37:00.888670Z kullanıcı onayladı (seri toplu onayı, 17 Kas gecesi)",
+    "2026-11-19T18:58:27.047Z yayın başladı",
+    "2026-11-19T18:59:00.082Z yayınlandı https://www.instagram.com/reel/Df7x096HArj/"
   ],
-  "yayin_zamani": "2026-11-19T21:55:00+03:00"
+  "yayin_zamani": "2026-11-19T21:55:00+03:00",
+  "permalink": "https://www.instagram.com/reel/Df7x096HArj/",
+  "yayin_id": "18117643955098106"
 }
