@@ -12,11 +12,15 @@
     "mezopotamya"
   ],
   "kaynak": "Özgün çizim",
-  "durum": "onaylandi",
+  "durum": "yayinlandi",
   "ana_izgara": false,
   "kayit": [
     "2026-11-17T20:37:00.888670Z takvime alındı: 2026-11-19T16:30:00+03:00",
-    "2026-11-17T20:37:00.888670Z kullanıcı onayladı (seri toplu onayı, 17 Kas gecesi)"
+    "2026-11-17T20:37:00.888670Z kullanıcı onayladı (seri toplu onayı, 17 Kas gecesi)",
+    "2026-11-19T13:34:19.609Z yayın başladı",
+    "2026-11-19T13:35:05.933Z yayınlandı https://www.instagram.com/reel/Df7MvQVmvg0/"
   ],
-  "yayin_zamani": "2026-11-19T16:30:00+03:00"
+  "yayin_zamani": "2026-11-19T16:30:00+03:00",
+  "permalink": "https://www.instagram.com/reel/Df7MvQVmvg0/",
+  "yayin_id": "18418461085083524"
 }
