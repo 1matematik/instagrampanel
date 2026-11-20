@@ -88,7 +88,7 @@ def bolum(no,ex1,ex2,ss,prev):
     json.dump(j,open(d+'/ses.json','w'),ensure_ascii=False)
     post={"baslik":f"Mathlemur Kök Avcısı - Bölüm {no}: √{n1} ve √{n2}","tur":"özgün","sure":44,"fps":30,
      "caption":f"Kök avı, Bölüm {no} 🦝\n√{n1} = {k1}√{r1}\n√{n2} = {k2}√{r2}\n\nSıra sende: √{ss} kaç eder? Cevabını yoruma yaz, bir sonraki bölümde birlikte kontrol edelim!\n\nKaydet, LGS'de lazım olur 📌\n\nHer gün matematik için takip et 👆",
-     "hashtagler":["lgs", "lgsmatematik", "kareköklüifadeler", "8sınıfmatematik", "mathlemur"],"kaynak":"Özgün Mathlemur karakteri ve kurgu","durum":"taslak","ana_izgara":False,"kayit":[]}
+     "hashtagler":["keşfet", "yapayzeka", "teknoloji", "izleöğren", "mathlemur"],"kaynak":"Özgün Mathlemur karakteri ve kurgu","durum":"taslak","ana_izgara":False,"kayit":[]}
     json.dump(post,open(d+'/post.json','w'),ensure_ascii=False,indent=1)
     return slug
 BOLUMLER=[(2,12,18,8,98),(3,20,27,45,8),(4,75,63,28,45),(5,200,300,500,28),(6,128,162,242,500)]
