@@ -63,7 +63,7 @@ def bolum(no,ex1,ex2,ss,prev):
     s=re.sub(r"const F2=fset\(.*\n",f"const F2=fset(0,[['√{n2} = √(',WH],['{k2*k2}',GOLD],[' · ',WH],['{r2}',CY],[')',WH]],[['√{n2} = ',WH],['{k2}',GOLD],['√{r2}',CY]],'√{n2}');\n",s)
     s=s.replace("T('√98 = ?'",f"T('√{ss} = ?'").replace("[['İpucu: 98 = ',WH],['49',GOLD],[' · ',WH],['2',CY]]",f"[['İpucu: {ss} = ',WH],['{ks*ks}',GOLD],[' · ',WH],['{rs}',CY]]")
     s=s.replace("const six=T('6',",f"const six=T('{k1}',").replace("five=T('5',",f"five=T('{k2}',")
-    s=s.replace("'BÖLÜM 1 / 16'",f"'BÖLÜM {no}'")
+    s=re.sub(r"'BÖLÜM 1( / 16)?'",f"'BÖLÜM {no}'",s,count=1)
     if prev:
         pk,pr=ayir(prev)
         s=s.replace("// ---------- altyazı + CTA",f"const dun=TS([['Geçen cevap: ',CY],['√{prev} = ',WH],['{pk}',GOLD],['√{pr}',CY]],540,620,56,{{opacity:0}});\n// ---------- altyazı + CTA")
