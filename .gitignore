@@ -3,3 +3,4 @@ node_modules/
 cikti/
 *.log
 lib/
+__pycache__/
