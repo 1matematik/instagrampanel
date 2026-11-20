@@ -15,7 +15,8 @@ for(const s of fs.readdirSync(path.join(ROOT,'icerik')).sort()){
   const note=m=>(o.kayit ||= []).push(new Date().toISOString()+' '+m);
   if(o.durum!=='onaylandi') continue;
   if(o.yayin_zamani && Date.parse(o.yayin_zamani)>Date.now()) { console.log(s,'zamanı gelmedi'); continue; }
-  const caption=[o.caption,...(o.hashtagler||[]).slice(0,5).map(h=>'#'+h.replace(/^#/,''))].join('\n\n');
+  const etiket=(o.hashtagler||[]).slice(0,5).map(h=>'#'+h.replace(/^#/,'')).join(' ');
+  const caption=etiket?o.caption+'\n\n'+etiket:o.caption;
   const videoFile=path.join(ROOT,'yayin','video',s+'.mp4');
   if(!fs.existsSync(videoFile)){ console.log(s,'video yayin/video/ klasöründe yok; atlandı'); continue; }
   const videoUrl=`${RAW_BASE}/yayin/video/${s}.mp4`;
