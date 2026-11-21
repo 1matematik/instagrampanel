@@ -16,7 +16,7 @@ def bolenler(k): return [d for d in range(1, k + 1) if k % d == 0]
 
 def izgara_yamasi(s, gapy=24):
     s = s.replace("const CS=Math.min(110,Math.floor(880/(r*k)),Math.floor(400/k)), bw=k*CS, W=r*bw, H=k*CS, X0=(1080-W)/2, Y0=500+(420-H)/2;",
-      f"const cols=Math.min(r,6), rows=Math.ceil(r/cols), GAPY=rows>1?{gapy}:0, CS=Math.min(110,Math.floor(880/(cols*k)),Math.floor((400-GAPY*(rows-1))/(rows*k))), bw=k*CS, W=cols*bw, H=k*CS, X0=(1080-W)/2, Y0=500+(420-rows*H-GAPY*(rows-1))/2;", 1)
+      f"let cols=1, bestCS=0; for(let c=1;c<=r;c++){{const rw=Math.ceil(r/c), gy=rw>1?{gapy}:0, cs=Math.min(110,Math.floor(880/(c*k)),Math.floor((400-gy*(rw-1))/(rw*k))); if(cs>bestCS){{bestCS=cs; cols=c}}}} const rows=Math.ceil(r/cols), GAPY=rows>1?{gapy}:0, CS=Math.max(8,bestCS), bw=k*CS, W=cols*bw, H=k*CS, X0=(1080-W)/2, Y0=500+(420-rows*H-GAPY*(rows-1))/2;", 1)
     s = s.replace("for(let b=0;b<r;b++){const g=el('g',{},root), col=b%2?CY:GOLD, x0=X0+b*bw;",
       "for(let b=0;b<r;b++){const g=el('g',{},root), col=b%2?CY:GOLD, x0=X0+(b%cols)*bw, Yb=Y0+Math.floor(b/cols)*(H+GAPY);", 1)
     a = s.index("for(let b=0;b<r;b++){"); e = s.index("blocks.push(", a); e = s.index("\n", e)
@@ -42,8 +42,8 @@ def tumav(seri_no, n, ss_n, ss_ipucu):
     _, (d2, r2), (d3, r3), (d4, r4) = F
     kod = f"""// ---------- TÜM AV
 const G0=el('g',{{opacity:0}}), C0=[];
-{{const cs=56, X=(1080-12*cs)/2, Y=520; for(let i=0;i<{n};i++){{const x=X+(i%12)*cs, y=Y+Math.floor(i/12)*cs;
- C0.push(el('rect',{{x:x+3,y:y+3,width:cs-6,height:cs-6,rx:8,fill:mix(CELL,CY,.75),stroke:'#d8f8ff','stroke-width':2}},G0))}}}}
+{{let nc=12, cs=0; for(let c=8;c<=70;c++){{const rw=Math.ceil({n}/c), q=Math.min(56,Math.floor(880/c),Math.floor(420/rw)); if(q>cs){{cs=q; nc=c}}}} const X=(1080-nc*cs)/2, Y=520, gp=cs>=30?3:1.5; for(let i=0;i<{n};i++){{const x=X+(i%nc)*cs, y=Y+Math.floor(i/nc)*cs;
+ C0.push(el('rect',{{x:x+gp,y:y+gp,width:cs-2*gp,height:cs-2*gp,rx:Math.max(2,cs/7),fill:mix(CELL,CY,.75),stroke:'#d8f8ff','stroke-width':2}},G0))}}}}
 const X1=makeEx({d2},{r2},'{d2*d2}'), X2=makeEx({d3},{r3},'{d3*d3}'), X3=makeEx({d4},{r4},'{d4*d4}');
 [X1,X2,X3].forEach(E=>E.bl.setAttribute('display','none'));
 X1.cnt.textContent='{n} kare'; X2.cnt.textContent='{n} kare'; X3.cnt.textContent='{n} kare';
@@ -61,7 +61,7 @@ const kural=el('g',{{opacity:0}});
 el('rect',{{x:110,y:560,width:860,height:330,rx:36,fill:'rgba(246,201,69,.10)',stroke:GOLD,'stroke-width':6}},kural);
 T('KURAL',540,630,44,GOLD,{{'letter-spacing':6}},kural);
 kural.appendChild(TS([['En büyük katsayı: ',WH],['{k}',GOLD]],540,705,54,{{}}));
-kural.appendChild(TS([['{k}\\'{ek_in(k)} bölenleri: ',WH],['{" · ".join(map(str, D))}',CY]],540,780,54,{{}}));
+kural.appendChild(TS([['{k}\\'{ek_in(k)} bölenleri: ',WH],['{" · ".join(map(str, D))}',CY]],540,780,{54 if len(str(k))<2 else 46},{{}}));
 kural.appendChild(TS([['→ ',WH],['{len(D)} farklı yazılış!',GOLD]],540,860,62,{{filter:'url(#glow)'}}));
 function tumAv(t){{
  soru.setAttribute('opacity',ramp(t,.9,1.5)*(1-ramp(t,2.9,3.3)));
@@ -119,5 +119,9 @@ function tumAv(t){{
     return yeni, metin
 
 if __name__ == '__main__':
-    slug, metin = tumav(1, 72, 48, None)
-    print(slug); print('\n'.join(metin))
+    # Kullanım: python3 yayin/tumav_uret.py 2:108:96 3:128:150 ...   (seri_no:n:sıra_sende_n)
+    # tum-av-01 yayınlandığı için varsayılan çalıştırma onu EZMEZ; açıkça 1:... verilmedikçe dokunulmaz.
+    for a in sys.argv[1:]:
+        no, n, ss = map(int, a.split(':'))
+        slug, metin = tumav(no, n, ss, None)
+        print(slug); print('\n'.join(metin)); print()

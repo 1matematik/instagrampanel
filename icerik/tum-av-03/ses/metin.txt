@@ -1,0 +1,8 @@
+Merhaba, ben Matlemur! Bugün tüm av: kök yüz yirmi sekiz kaç yolla yazılır?
+Bir ile başla: hiç blok yok, kök yüz yirmi sekiz!
+İki ile: dörtlük otuz iki blok. İki kök otuz iki!
+Dört ile: on altılık sekiz blok. Dört kök sekiz!
+Sekiz ile: altmış dörtlük iki blok. Sekiz kök iki, tam av!
+Sekizin bölenleri: bir, iki, dört, sekiz. Tam dört yol!
+Sıra sende! Kök yüz elli kaç yolla yazılır? Cevabı yorumlara yaz!
+Yarın yine buluşalım!
