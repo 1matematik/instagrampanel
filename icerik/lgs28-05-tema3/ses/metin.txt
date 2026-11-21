@@ -1,0 +1,8 @@
+Maarif modeli, üçüncü tema: Geometrik Şekiller! Altı çıktı, otuz dokuz saat.
+Birinci çıktı: Teknoloji yardımıyla üçgenin kenar ve açı ilişkisini yorumlayabilme.
+İkinci çıktı: Üçgenin kenar uzunlukları arasındaki ilişkiye yönelik çıkarım yapabilme.
+Üçüncü çıktı: Eş üçgen oluşturmak için yeterli elemanlara dair çıkarım yapabilme.
+Dördüncü çıktı: Benzer üçgen oluşturmak için yeterli elemanlara dair çıkarım yapabilme.
+Beşinci çıktı: Kenarları a kare artı b kare eşittir c kare olan üçgenlerin dik üçgen olduğunu yorumlayabilme.
+Altıncı çıktı: Açı kenar ilişkisi, üçgen eşitsizliği ve Pisagor problemlerini çözebilme.
+Sıradaki tema: Geometrik Nicelikler! Kaydet ve takip et!

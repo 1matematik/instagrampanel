@@ -1,0 +1,6 @@
+Maarif modeli, ikinci tema: Cebirsel Düşünme ve Değişimler! Dört çıktı, kırk iki saat.
+Birinci çıktı: Gerçek yaşam durumlarından dik koordinat sistemini çözümleyebilme.
+İkinci çıktı: Doğrusal ilişkileri doğrusal fonksiyonlarla temsil edebilme.
+Üçüncü çıktı: İki doğrusal fonksiyonun birbirine göre durumunu yorumlayabilme.
+Dördüncü çıktı: Doğrusal fonksiyon problemlerini algoritma yöntemleriyle yapılandırabilme.
+Sıradaki tema: Geometrik Şekiller! Kaydet ve takip et!

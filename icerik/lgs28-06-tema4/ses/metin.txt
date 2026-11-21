@@ -1,0 +1,5 @@
+Maarif modeli, dördüncü tema: Geometrik Nicelikler! Üç çıktı, on beş saat.
+Birinci çıktı: Dik prizma, piramit, silindir ve koninin yüzey açınımlarını çözümleyebilme.
+İkinci çıktı: Silindirin yüzey açınımı deneyimini yüzey alanına yansıtabilme.
+Üçüncü çıktı: Daire alanından hareketle silindirin hacmine yönelik analojik akıl yürütebilme.
+Sıradaki tema: Dönüşüm! Kaydet ve takip et!
