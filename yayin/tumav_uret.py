@@ -106,7 +106,8 @@ function tumAv(t){{
              f"Sıra sende! Kök {sy(ss_n)} kaç yolla yazılır? Cevabı yorumlara yaz!",
              "Yarın yine buluşalım!"]
     open(d + '/ses/metin.txt', 'w').write('\n'.join(metin) + '\n')
-    j = json.load(open(d + '/ses.json')); j['muzik_dosya'] = 'kutuphane/muzik/' + K.MUZ[(seri_no + 6) % len(K.MUZ)]
+    j = json.load(open(d + '/ses.json')); UZUN = [m for m in K.MUZ if float(__import__('subprocess').check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',f'{K.R}/kutuphane/muzik/{m}']).decode()) >= 80]  # 6 sn başlangıç + ~40 sn video: kısa parça sesi/videoyu keser
+    j['muzik_dosya'] = 'kutuphane/muzik/' + UZUN[(seri_no + 6) % len(UZUN)]
     json.dump(j, open(d + '/ses.json', 'w'), ensure_ascii=False)
     yaz = ' = '.join([f'√{n}'] + [f'{a}√{b}' for a, b in F[1:]])
     post = json.load(open(d + '/post.json'))
