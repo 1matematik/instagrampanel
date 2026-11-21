@@ -12,9 +12,12 @@
     "mathlemur"
   ],
   "kaynak": "Özgün Mathlemur karakteri ve kurgu",
-  "durum": "onay-bekliyor",
+  "durum": "onaylandi",
   "ana_izgara": false,
   "kayit": [
-    "2026-11-21T17:52:49.207Z video hazır, kullanıcı onayı bekleniyor"
-  ]
+    "2026-11-21T17:52:49.207Z video hazır, kullanıcı onayı bekleniyor",
+    "2026-11-21T20:55:46.295Z kullanıcı 21 Kas 23:55 onay verdi, 22 Kas 21:00",
+    "2026-11-21T20:55:46.414Z kullanıcı onayladı"
+  ],
+  "yayin_zamani": "2026-11-22T21:00:00+03:00"
 }
