@@ -67,7 +67,7 @@ def beats(cumleler, ilk=0.0):
 # ---------------------------------------------------------------- video tanımları
 def v_duyuru():
     ses = ["Merhaba, ben Matlemur! Önemli bir duyuru var!",
-           f"MEB, yeni müfredata uyumlu soru modelinin El Ge Se'de iki bin yirmi sekizden itibaren kullanılacağını açıkladı.",
+           f"MEB, yeni müfredata uyumlu soru modelinin lise giriş sınavında iki bin yirmi sekizden itibaren kullanılacağını açıkladı.",
            f"Yeni müfredat {soz(7)} temadan oluşuyor.",
            f"{soz(23).capitalize()} öğrenme çıktısı var.",
            f"Toplam {soz(180)} ders saati!",
@@ -120,7 +120,7 @@ def v_tema(i):
     if sonraki:
         ses.append(f"Sıradaki tema: {sonraki[1]}! Kaydet ve takip et!"); alt.append(ses[-1])
     else:
-        ses.append("Serinin sonu! Kaydet ve takip et, El Ge Se iki bin yirmi sekize hazırlan!"); alt.append("Serinin sonu! Kaydet ve takip et, LGS 2028'e hazırlan!")
+        ses.append("Serinin sonu! Kaydet ve takip et, lise giriş sınavı iki bin yirmi sekize hazırlan!"); alt.append("Serinin sonu! Kaydet ve takip et, LGS 2028'e hazırlan!")
     b, end = beats(ses)
     cfg = dict(kind='tema', accent=RENK[no], label='2028 • MAARİF MODELİ', beats=b, end=end, cta=round(b[-1] + .6, 2), subs=alt,
                no=no, name=ad, n=n, hours=saat, items=[[k, t] for k, t, _ in items],
