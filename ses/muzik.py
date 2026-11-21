@@ -102,9 +102,15 @@ def sparkle():
     return out
 def tick():
     t = np.arange(int(.05*SR))/SR; return np.sin(2*np.pi*1800*t)*np.exp(-t*90)*.5
+def zipla(dur=.30, glide=300):
+    """Sevimli hareket sesi: yumuşak, yukarı kayan 'bıdık' (22 Kas kararı: rüzgâr/whoosh sesi rahatsız ediyordu)."""
+    t = np.arange(int(dur*SR))/SR; f = 300+glide*(1-np.exp(-t*16)); ph = 2*np.pi*np.cumsum(f)/SR
+    x = np.sin(ph)+.28*np.sin(2*ph)+.1*np.sin(3*ph); env = (1-np.exp(-t*260))*np.exp(-t*(12 if dur < .4 else 9))
+    return lp(x*env, 3200)*.85
+TATLI = {'whoosh_kisa': 'zipla', 'swish': 'zipla', 'whoosh': 'zipla_buyuk'}   # eski rüzgâr efektleri yerine sevimli ses (yeni üretimler)
 fx = {'pop': pop, 'ding': ding, 'sparkle': sparkle, 'tick': tick,
-      'whoosh': lambda: whoosh(.7), 'whoosh_kisa': lambda: whoosh(.45), 'swish': lambda: whoosh(.9, up=True)}
-for e in cfg['sfx']: mix_in(X, fx[e['tip']](), e['t'], e.get('g', .6))
+      'zipla': zipla, 'zipla_buyuk': lambda: zipla(.45, 480), 'whoosh': lambda: whoosh(.7), 'whoosh_kisa': lambda: whoosh(.45), 'swish': lambda: whoosh(.9, up=True)}
+for e in cfg['sfx']: mix_in(X, fx[TATLI.get(e['tip'], e['tip']) if not os.environ.get('ESKI_SES') else e['tip']](), e['t'], e.get('g', .6))
 X = np.tanh(X)*1.0; X = X/max(1e-9, np.max(np.abs(X)))*.7 if np.max(np.abs(X)) > 0 else X
 def save(path, mono):
     st = np.stack([mono, mono], 1); pcm = (np.clip(st, -1, 1)*32767).astype('<i2')
