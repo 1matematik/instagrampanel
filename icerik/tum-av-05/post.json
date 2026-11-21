@@ -1,18 +1,20 @@
 {
- "baslik": "Mathlemur Tüm Av 5: √200 kaç yolla yazılır?",
- "tur": "özgün",
- "sure": 44,
- "fps": 30,
- "caption": "Tüm av 5 🦝 √200 kaç farklı a√b şeklinde yazılır?\n√200 = 2√50 = 5√8 = 10√2\nKural: en büyük katsayı 10 → 10'un bölenleri 1, 2, 5, 10 → 4 yazılış\n\nSıra sende: √288 kaç farklı şekilde yazılır? Cevabını yoruma yaz, bir sonraki bölümde birlikte kontrol edelim!\n\nKaydet, LGS'de lazım olur 📌\n\nHer gün matematik için takip et 👆",
- "hashtagler": [
-  "keşfet",
-  "yapayzeka",
-  "teknoloji",
-  "izleöğren",
-  "mathlemur"
- ],
- "kaynak": "Özgün Mathlemur karakteri ve kurgu",
- "durum": "taslak",
- "ana_izgara": false,
- "kayit": []
+  "baslik": "Mathlemur Tüm Av 5: √200 kaç yolla yazılır?",
+  "tur": "özgün",
+  "sure": 44,
+  "fps": 30,
+  "caption": "Tüm av 5 🦝 √200 kaç farklı a√b şeklinde yazılır?\n√200 = 2√50 = 5√8 = 10√2\nKural: en büyük katsayı 10 → 10'un bölenleri 1, 2, 5, 10 → 4 yazılış\n\nSıra sende: √288 kaç farklı şekilde yazılır? Cevabını yoruma yaz, bir sonraki bölümde birlikte kontrol edelim!\n\nKaydet, LGS'de lazım olur 📌\n\nHer gün matematik için takip et 👆",
+  "hashtagler": [
+    "keşfet",
+    "yapayzeka",
+    "teknoloji",
+    "izleöğren",
+    "mathlemur"
+  ],
+  "kaynak": "Özgün Mathlemur karakteri ve kurgu",
+  "durum": "onay-bekliyor",
+  "ana_izgara": false,
+  "kayit": [
+    "2026-11-21T17:52:49.182Z video hazır, kullanıcı onayı bekleniyor"
+  ]
 }
