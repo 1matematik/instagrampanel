@@ -12,7 +12,7 @@
     "keşfet"
   ],
   "kaynak": "Üslü sayı karşılaştırma (kök alma) yöntemi; özgün Mathlemur tasarımı",
-  "durum": "onay-bekliyor",
+  "durum": "onaylandi",
   "ana_izgara": false,
   "kayit": [
     "düello taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
@@ -20,6 +20,8 @@
     "düello taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
     "düello taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
     "düello taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
-    "videolar üretildi, kullanıcı onayı bekleniyor"
-  ]
+    "videolar üretildi, kullanıcı onayı bekleniyor",
+    "kullanıcı 22 Kas 17:50: 24 Kas için onay; 19:30 TRT"
+  ],
+  "yayin_zamani": "2026-11-24T19:30:00+03:00"
 }
