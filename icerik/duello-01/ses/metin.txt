@@ -1,0 +1,7 @@
+Ben Matlemur, düellonun hakemiyim! Üslü sayı düellosu başlıyor!
+İki üzeri üç yüz mü büyük, üç üzeri iki yüz mü? Tahminini yoruma yaz!
+Kural: kök, ikisini de biraz daha küçültür! İkisinin de yüzüncü kökünü alıyorum.
+İki üzeri üç yüz, kökten sonra iki üzeri üç. Üç üzeri iki yüz, kökten sonra üç üzeri iki.
+İki üzeri üç sekiz. Üç üzeri iki dokuz.
+Sekiz, dokuzdan küçük! Kazanan üç üzeri iki yüz!
+Kaydet ve takip et, sıradaki düello çok yakın!

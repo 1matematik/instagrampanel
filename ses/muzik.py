@@ -102,16 +102,30 @@ def sparkle():
     return out
 def tick():
     t = np.arange(int(.05*SR))/SR; return np.sin(2*np.pi*1800*t)*np.exp(-t*90)*.5
-def zipla(dur=.30, glide=300):
-    """Sevimli hareket sesi: yumuşak, yukarı kayan 'bıdık' (22 Kas kararı: rüzgâr/whoosh sesi rahatsız ediyordu)."""
-    t = np.arange(int(dur*SR))/SR; f = 300+glide*(1-np.exp(-t*16)); ph = 2*np.pi*np.cumsum(f)/SR
-    x = np.sin(ph)+.28*np.sin(2*ph)+.1*np.sin(3*ph); env = (1-np.exp(-t*260))*np.exp(-t*(12 if dur < .4 else 9))
-    return lp(x*env, 3200)*.85
-TATLI = {'whoosh_kisa': 'zipla', 'swish': 'zipla', 'whoosh': 'zipla_buyuk'}   # eski rüzgâr efektleri yerine sevimli ses (yeni üretimler)
+def _t(d): return np.arange(int(d*SR))/SR
+def _thud(f0, f1, d, decay):
+    t = _t(d); f = f1+(f0-f1)*np.exp(-t*40); return np.sin(2*np.pi*np.cumsum(f)/SR)*(1-np.exp(-t*600))*np.exp(-t*decay)
+def _nb(lo, hi, d, att, dec):
+    t = _t(d); return bp(rng.standard_normal(len(t)), lo, hi)*(1-np.exp(-t/att))*np.exp(-t*dec)
+def cim(buyuk=False):
+    """Çime basış (22 Kas kararı: doğal hareket sesi): yumuşak tomp + hışırtı."""
+    d = .32 if buyuk else .24
+    return (.55*_thud(120, 70, d, 22)+.55*_nb(1800, 7000, d, .004, 16 if buyuk else 26)+.35*_nb(500, 1400, d, .01, 18))*(1.25 if buyuk else 1)
+def toprak(buyuk=False):
+    """Topraktan sıçrayış: derin tomp + toprak kırıntısı + hafif çim hışırtısı."""
+    d = .42 if buyuk else .32; t = _t(d)
+    x = .85*_thud(95, 48, d, 16)+.5*lp(_nb(200, 1100, d, .006, 14), 1100)
+    sw = bp(rng.standard_normal(len(t)), 2500, 6500)*np.sin(np.pi*np.minimum(1, t/d))**2*np.exp(-t*8)*.28
+    return (x+sw)*(1.2 if buyuk else 1)
+DOGAL_KISIK = .55   # doğal hareket sesleri kısık tutulur (kullanıcı kararı)
+TATLI = {'whoosh_kisa': 'toprak', 'swish': 'cim', 'whoosh': 'toprak_buyuk'}   # rüzgâr/bilgisayar sesi yerine doğal sesler (ESKI_SES=1 ile eski)
 fx = {'pop': pop, 'ding': ding, 'sparkle': sparkle, 'tick': tick,
-      'zipla': zipla, 'zipla_buyuk': lambda: zipla(.45, 480), 'whoosh': lambda: whoosh(.7), 'whoosh_kisa': lambda: whoosh(.45), 'swish': lambda: whoosh(.9, up=True)}
-for e in cfg['sfx']: mix_in(X, fx[TATLI.get(e['tip'], e['tip']) if not os.environ.get('ESKI_SES') else e['tip']](), e['t'], e.get('g', .6))
-X = np.tanh(X)*1.0; X = X/max(1e-9, np.max(np.abs(X)))*.7 if np.max(np.abs(X)) > 0 else X
+      'cim': cim, 'toprak': toprak, 'toprak_buyuk': lambda: toprak(True), 'cim_buyuk': lambda: cim(True), 'whoosh': lambda: whoosh(.7), 'whoosh_kisa': lambda: whoosh(.45), 'swish': lambda: whoosh(.9, up=True)}
+ESKI = bool(os.environ.get('ESKI_SES')); DOGAL = {'cim', 'toprak', 'toprak_buyuk', 'cim_buyuk'}
+for e in cfg['sfx']:
+    ad = e['tip'] if ESKI else TATLI.get(e['tip'], e['tip'])
+    mix_in(X, fx[ad](), e['t'], e.get('g', .6)*(DOGAL_KISIK if ad in DOGAL else 1))
+X = np.tanh(X)*1.0
 def save(path, mono):
     st = np.stack([mono, mono], 1); pcm = (np.clip(st, -1, 1)*32767).astype('<i2')
     with wave.open(path, 'wb') as w: w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes())

@@ -299,6 +299,7 @@ BURSTS.forEach(([t0,x,y,c],bi)=>{for(let i=0;i<16;i++){const a=rnd()*6.28,v=250+
         bursts.append([b[1] + .3, 540, 1000, GOLD])
     if cfg['kind'] == 'dagilim': bursts.append([b[7] + .3, 540, 1110, GOLD]); rings.append([b[7] + .3, GOLD, 1110])
     if cfg['kind'] == 'tema': bursts.append([b[1] + .3, 540, 850, cfg['accent']])
+    bursts.extend(cfg.get('bursts', [])); rings.extend(cfg.get('rings', []))
     cf = cf.replace('BURST_LIST', json.dumps(bursts)) + ring + f"const RINGS={json.dumps(rings)};\n"
     js = JS.replace('/*CFG*/', json.dumps(cfg, ensure_ascii=False)).replace('/*MASCOT*/', masc).replace('/*BADGE*/', badge) \
            .replace('/*SUBCTA*/', subcta).replace('/*BG*/', bg).replace('/*CF*/', cf)

@@ -1,0 +1,24 @@
+{
+  "baslik": "Üslü Sayı Düellosu 2: 2^1000 mi 10^300 mü?",
+  "tur": "özgün",
+  "sure": 60,
+  "fps": 30,
+  "caption": "ÜSLÜ SAYI DÜELLOSU • Bölüm 2 ⚔️\n\n2¹⁰⁰⁰ mi büyük, 10³⁰⁰ mü? Tahminini yoruma yaz!\n\nHakem Mathlemur'un kuralı: kök, ikisini de biraz daha küçültür.\n100. kökü alınca:\n2¹⁰ = 1024   ve   10³ = 1000\nKazanan: 2¹⁰⁰⁰ 🏆\n\nKaydet, LGS matematik için lazım olur 📌\n\nHer gün matematik için takip et 👆",
+  "hashtagler": [
+    "üslüsayılar",
+    "lgsmatematik",
+    "matematik",
+    "kökler",
+    "keşfet"
+  ],
+  "kaynak": "Üslü sayı karşılaştırma (kök alma) yöntemi; özgün Mathlemur tasarımı",
+  "durum": "taslak",
+  "ana_izgara": false,
+  "kayit": [
+    "düello taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
+    "düello taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
+    "düello taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
+    "düello taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
+    "düello taslağı üretildi (yayın zamanını kullanıcı belirleyecek)"
+  ]
+}
