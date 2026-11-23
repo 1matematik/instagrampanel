@@ -117,8 +117,8 @@ def toprak(buyuk=False):
     x = .85*_thud(95, 48, d, 16)+.5*lp(_nb(200, 1100, d, .006, 14), 1100)
     sw = bp(rng.standard_normal(len(t)), 2500, 6500)*np.sin(np.pi*np.minimum(1, t/d))**2*np.exp(-t*8)*.28
     return (x+sw)*(1.2 if buyuk else 1)
-EFEKT_KISIK = {'ding': .45, 'sparkle': .6, 'pop': .8, 'tick': .8}   # 23 Kas kullanıcı kararı: çan (çın) çok yüksek, efektler bir tık kısık; ESKI_SES=1 ile eski seviye
-DOGAL_KISIK = .55   # doğal hareket sesleri kısık tutulur (kullanıcı kararı)
+EFEKT_KISIK = {'ding': .45, 'sparkle': .5, 'pop': .5, 'tick': .5}   # 23 Kas kullanıcı kararı: çan (çın) çok yüksek, efektler bir tık kısık; ESKI_SES=1 ile eski seviye
+DOGAL_KISIK = .28   # doğal hareket sesleri kısık tutulur (kullanıcı kararı; 23 Kas: yarıya indirildi .55→.28)
 TATLI = {'whoosh_kisa': 'toprak', 'swish': 'cim', 'whoosh': 'toprak_buyuk'}   # rüzgâr/bilgisayar sesi yerine doğal sesler (ESKI_SES=1 ile eski)
 fx = {'pop': pop, 'ding': ding, 'sparkle': sparkle, 'tick': tick,
       'cim': cim, 'toprak': toprak, 'toprak_buyuk': lambda: toprak(True), 'cim_buyuk': lambda: cim(True), 'whoosh': lambda: whoosh(.7), 'whoosh_kisa': lambda: whoosh(.45), 'swish': lambda: whoosh(.9, up=True)}
