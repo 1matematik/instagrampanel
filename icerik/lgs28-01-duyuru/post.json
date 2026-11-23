@@ -12,13 +12,15 @@
     "keşfet"
   ],
   "kaynak": "MEB açıklaması ve yeni 8. sınıf Maarif matematik programı bilgileri; özgün Mathlemur tasarımı",
-  "durum": "onay-bekliyor",
+  "durum": "onaylandi",
   "ana_izgara": false,
   "kayit": [
     "seri taslağı üretildi (yayın tarihini kullanıcı belirleyecek)",
     "seri taslağı üretildi (yayın tarihini kullanıcı belirleyecek)",
     "seri taslağı üretildi (yayın tarihini kullanıcı belirleyecek)",
     "seri taslağı üretildi (yayın tarihini kullanıcı belirleyecek)",
-    "kullanıcı 23 Kas 01:30: Maarif Radarı serisi için yayın onayı ÖNCEDEN verildi; yayın tarihi/saatleri kullanıcıdan gelince zamanlanacak (zamanlama yok)"
-  ]
+    "kullanıcı 23 Kas 01:30: Maarif Radarı serisi için yayın onayı ÖNCEDEN verildi; yayın tarihi/saatleri kullanıcıdan gelince zamanlanacak (zamanlama yok)",
+    "23 Kas 12:00 kullanıcı ön onayı + zamanlama Claude seçti: 2026-11-25T12:40"
+  ],
+  "yayin_zamani": "2026-11-25T12:40:00+03:00"
 }
