@@ -1,0 +1,7 @@
+Ben Matlemur! Bir artı iki artı dört, böyle ikiye katlayarak bin yirmi dörde kadar toplasak kaç eder? Tek tek toplamak çok uzun!
+Püf nokta: ödünç alma! Toplamın başına fazladan bir tane bir koyuyorum.
+Bir artı bir, iki. İki artı iki, dört. Dört artı dört, sekiz. Taşlar zincirleme ikiye katlanıyor!
+Zincir sona kadar gidiyor. beş yüz on iki artı beş yüz on iki, bin yirmi dört. bin yirmi dört artı bin yirmi dört, iki bin kırk sekiz!
+Ama ben bir tane ödünç almıştım. Onu geri veriyorum: iki bin kırk sekiz eksi bir.
+Cevap, iki bin kırk yedi! Kural: ikinin kuvvetleri toplamı, bir sonraki kuvvet eksi bir!
+Kaydet ve takip et!

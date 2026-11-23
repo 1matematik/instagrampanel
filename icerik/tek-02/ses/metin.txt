@@ -1,7 +1,0 @@
-Ben Matlemur! Geçen sorumuz: bir artı üç artı beş, on dokuza kadar. Cevap, yüz!
-Önce terim sayısını buluyoruz. n’inci tek sayı, iki n eksi bir.
-on dokuz eşittir iki n eksi bir. Buradan n, on.
-on tane tek sayı, on kare. Yani yüz!
-Yeni soru: bir artı üç artı beş, devam et, otuz dokuza kadar. Kaç eder?
-İpucu: önce terim sayısını bul, sonra karesini al!
-Yoruma yaz, cevap sonraki videoda. Kaydet ve takip et!

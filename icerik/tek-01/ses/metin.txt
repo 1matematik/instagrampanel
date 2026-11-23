@@ -4,4 +4,4 @@ Etrafına L şeklinde üç blok ekle. Toplam dört, yani iki kere iki!
 beş blok daha, toplam dokuz. yedi blok daha, toplam on altı, dört kere dört!
 Her L, bir satır, bir sütun ve bir köşe. O yüzden hep iki artıyor: bir, üç, beş, yedi.
 Formül: n tane tek sayının toplamı, n kare!
-Sıra sende! Bir artı üç artı beş, devam et, on dokuza kadar. Kaç eder? Cevap sonraki videoda, takip et!
+Mesela bir artı üç artı beş, on dokuza kadar. on tane tek sayı var, on kare, yani yüz! Kaydet ve takip et!

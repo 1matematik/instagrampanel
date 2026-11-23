@@ -1,0 +1,20 @@
+{
+  "baslik": "1+2+4+…+1024 kaç eder? Ödünç alma yöntemi",
+  "tur": "özgün",
+  "sure": 60,
+  "fps": 30,
+  "caption": "1 + 2 + 4 + … + 1024 kaç eder? 🧮\n\nTek tek toplamayın, ÖDÜNÇ ALMA yöntemi:\nBaşa fazladan 1 ekle → 1 + 1 = 2, 2 + 2 = 4, 4 + 4 = 8 … zincirleme 2048 olur.\nÖdünç aldığın 1'i geri ver: 2048 − 1 = 2047 ✅\n\nKural: 1 + 2 + 4 + … + 2ⁿ = 2ⁿ⁺¹ − 1 📌\n\nKaydet, LGS matematik için lazım olur 📌\n\nHer gün matematik için takip et 👆",
+  "hashtagler": [
+    "ikininkuvvetleri",
+    "lgsmatematik",
+    "matematik",
+    "pratikçözüm",
+    "keşfet"
+  ],
+  "kaynak": "1+3+5+…+(2n−1)=n² (L şekilli ispat); özgün Mathlemur tasarımı",
+  "durum": "taslak",
+  "ana_izgara": false,
+  "kayit": [
+    "tek sayılar taslağı üretildi (yayın zamanını kullanıcı belirleyecek)"
+  ]
+}
