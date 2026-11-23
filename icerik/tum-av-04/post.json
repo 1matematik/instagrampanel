@@ -12,7 +12,7 @@
     "mathlemur"
   ],
   "kaynak": "Özgün Mathlemur karakteri ve kurgu",
-  "durum": "onaylandi",
+  "durum": "yayinlandi",
   "ana_izgara": false,
   "kayit": [
     "2026-11-21T17:52:49.154Z video hazır, kullanıcı onayı bekleniyor",
@@ -21,7 +21,11 @@
     "2026-11-22T12:33:43.085Z kullanıcı 22 Kas 15:32 \"onaylıyorum\" dedi; saat gecikme nedeniyle 2026-11-22T17:00:00+03:00 -> 18:30 olarak kaydırıldı",
     "2026-11-22T15:34:02.316Z yayın başladı",
     "2026-11-22T15:34:25.508Z HATA işlem hatası: Error: Media upload has failed with error code 2207077",
-    "kullanıcı 23 Kas 01:30: Instagram yükleme hatası (2207077) sonrası yeniden yayın 23 Kas 12:40 için onaylandı"
+    "kullanıcı 23 Kas 01:30: Instagram yükleme hatası (2207077) sonrası yeniden yayın 23 Kas 12:40 için onaylandı",
+    "2026-11-23T09:44:36.996Z yayın başladı",
+    "2026-11-23T09:45:13.621Z yayınlandı https://www.instagram.com/reel/DgFFoaPlK8Z/"
   ],
-  "yayin_zamani": "2026-11-23T12:40:00+03:00"
+  "yayin_zamani": "2026-11-23T12:40:00+03:00",
+  "permalink": "https://www.instagram.com/reel/DgFFoaPlK8Z/",
+  "yayin_id": "18097484357165081"
 }
