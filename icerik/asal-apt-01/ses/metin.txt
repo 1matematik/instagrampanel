@@ -1,0 +1,11 @@
+Merhaba, ben Matlemur! Asal apartmanındayız, altı kapı çalacağım.
+Kural: sadece bir'e ve kendine bölünen, birden büyük sayı asaldır.
+İki: asal. Kapıda oturur!
+On beş: üç çarpı beş. Dışarı!
+Yirmi üç: asal. Kapıda oturur!
+Otuz dokuz: üç çarpı on üç. Dışarı!
+Kırk bir: asal. Kapıda oturur!
+Elli bir: üç çarpı on yedi. Dışarı!
+Dikkat! Elli bir asal gibi durur, ama değil!
+Sıra sende: elli yedi asal mı? Cevabı yorumlara yaz!
+Yarın yine buluşalım!

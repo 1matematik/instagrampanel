@@ -1,0 +1,12 @@
+Merhaba, ben Matlemur! Asal apartmanındayız, altı kapı çalacağım.
+Geçen cevap: yüz on dokuz asal değil: yedi çarpı on yedi.
+Kural: sadece bir'e ve kendine bölünen, birden büyük sayı asaldır.
+On bir: asal. Kapıda oturur!
+Otuz beş: beş çarpı yedi. Dışarı!
+Altmış bir: asal. Kapıda oturur!
+Seksen bir: üç çarpı yirmi yedi. Dışarı!
+Seksen üç: asal. Kapıda oturur!
+Seksen yedi: üç çarpı yirmi dokuz. Dışarı!
+Dikkat! Seksen yedi asal gibi durur, ama değil!
+Sıra sende: yüz yirmi bir asal mı? Cevabı yorumlara yaz!
+Yarın yine buluşalım!
