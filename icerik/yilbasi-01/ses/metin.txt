@@ -1,0 +1,7 @@
+Ben Matlemur! Yeni yılı karekökle kutluyorum. Bakalım kökten bir yılbaşı ağacı çıkacak mı?
+Tepede kök bir. Altında kökü ikiye yakın sayılar: kök iki, kök üç, kök dört, kök beş.
+Sonra kökü üçe yakın sayılar: altıdan on bire kadar. Her satır iki sayı daha geniş!
+Dördüncü ve beşinci satır, ağaç böyle büyüyor!
+Satırlar genişleyince gövdeyi toplarla, ışıklarla doldurduk. Ağaç süsleniyor!
+Kural: her satır bir öncekinden iki sayı fazla. Dördüncü satır on ikiyle başlar, on dokuzla biter!
+Mutlu yıllar! Kaydet ve takip et!
