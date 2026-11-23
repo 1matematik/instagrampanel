@@ -1,0 +1,23 @@
+{
+  "baslik": "Tek Sayıların Sırrı 1: 1+3+5+… neden kare?",
+  "tur": "özgün",
+  "sure": 60,
+  "fps": 30,
+  "caption": "TEK SAYILARIN SIRRI • Bölüm 1 🧩\n\n1 + 3 + 5 + 7 + … toplamı neden hep tam kare çıkıyor?\n\n1 → 1²\n1 + 3 → 2²\n1 + 3 + 5 → 3²\n1 + 3 + 5 + 7 → 4²\n\nFormül: n tane tek sayının toplamı n² 📌\n\nSIRA SENDE: 1 + 3 + 5 + … + 19 kaç eder? Yoruma yaz, cevap sonraki videoda!\n\nKaydet, LGS matematik için lazım olur 📌\n\nHer gün matematik için takip et 👆",
+  "hashtagler": [
+    "karesayılar",
+    "lgsmatematik",
+    "matematik",
+    "örüntü",
+    "keşfet"
+  ],
+  "kaynak": "1+3+5+…+(2n−1)=n² (L şekilli ispat); özgün Mathlemur tasarımı",
+  "durum": "taslak",
+  "ana_izgara": false,
+  "kayit": [
+    "tek sayılar taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
+    "tek sayılar taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
+    "tek sayılar taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
+    "tek sayılar taslağı üretildi (yayın zamanını kullanıcı belirleyecek)"
+  ]
+}

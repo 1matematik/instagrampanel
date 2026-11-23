@@ -1,0 +1,7 @@
+Ben Matlemur! Tek sayıları art arda toplayınca hep tam kare çıkıyor. Neden?
+Bir blokla başlıyorum. Toplam bir.
+Etrafına L şeklinde üç blok ekle. Toplam dört, yani iki kere iki!
+beş blok daha, toplam dokuz. yedi blok daha, toplam on altı, dört kere dört!
+Her L, bir satır, bir sütun ve bir köşe. O yüzden hep iki artıyor: bir, üç, beş, yedi.
+Formül: n tane tek sayının toplamı, n kare!
+Sıra sende! Bir artı üç artı beş, devam et, on dokuza kadar. Kaç eder? Cevap sonraki videoda, takip et!
