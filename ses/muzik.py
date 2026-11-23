@@ -117,6 +117,7 @@ def toprak(buyuk=False):
     x = .85*_thud(95, 48, d, 16)+.5*lp(_nb(200, 1100, d, .006, 14), 1100)
     sw = bp(rng.standard_normal(len(t)), 2500, 6500)*np.sin(np.pi*np.minimum(1, t/d))**2*np.exp(-t*8)*.28
     return (x+sw)*(1.2 if buyuk else 1)
+EFEKT_KISIK = {'ding': .45, 'sparkle': .6, 'pop': .8, 'tick': .8}   # 23 Kas kullanıcı kararı: çan (çın) çok yüksek, efektler bir tık kısık; ESKI_SES=1 ile eski seviye
 DOGAL_KISIK = .55   # doğal hareket sesleri kısık tutulur (kullanıcı kararı)
 TATLI = {'whoosh_kisa': 'toprak', 'swish': 'cim', 'whoosh': 'toprak_buyuk'}   # rüzgâr/bilgisayar sesi yerine doğal sesler (ESKI_SES=1 ile eski)
 fx = {'pop': pop, 'ding': ding, 'sparkle': sparkle, 'tick': tick,
@@ -124,7 +125,7 @@ fx = {'pop': pop, 'ding': ding, 'sparkle': sparkle, 'tick': tick,
 ESKI = bool(os.environ.get('ESKI_SES')); DOGAL = {'cim', 'toprak', 'toprak_buyuk', 'cim_buyuk'}
 for e in cfg['sfx']:
     ad = e['tip'] if ESKI else TATLI.get(e['tip'], e['tip'])
-    mix_in(X, fx[ad](), e['t'], e.get('g', .6)*(DOGAL_KISIK if ad in DOGAL else 1))
+    mix_in(X, fx[ad](), e['t'], e.get('g', .6)*(DOGAL_KISIK if ad in DOGAL else 1)*(1 if ESKI else EFEKT_KISIK.get(ad, 1)))
 X = np.tanh(X)*1.0
 def save(path, mono):
     st = np.stack([mono, mono], 1); pcm = (np.clip(st, -1, 1)*32767).astype('<i2')
