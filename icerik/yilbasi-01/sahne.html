@@ -60,7 +60,7 @@ BALLS.sort((a,b)=>(a.k*10+a.i)-(b.k*10+b.i));
 // kar
 const SNOW=[]; for(let i=0;i<40;i++){const x=(i*173)%1080, ph=(i*57)%100/100; SNOW.push({c:el('circle',{r:3+(i%4),fill:'#fff',opacity:0},main),x,ph,sp:60+(i%5)*22})}
 // kural + tebrik
-const kuralG=el('g',{opacity:0}); T('KURAL',540,330,40,GOLD,{'letter-spacing':10},kuralG); TF('k. satır: k(k−1) … k(k+1)−1',540,405,56,WH,940,{filter:'url(#glow)'},kuralG); T('her satırda 2k tane sayı',540,470,46,CY,{},kuralG);
+const kuralG=el('g',{opacity:0}); T('KURAL',540,330,40,GOLD,{'letter-spacing':10},kuralG); TF('her satır 2 sayı daha geniş',540,405,60,WH,940,{filter:'url(#glow)'},kuralG); T('4. satır: 12 … 19 (8 sayı)',540,470,46,CY,{},kuralG);
 const mutlu=T('MUTLU YILLAR!',540,420,110,GOLD,{opacity:0,filter:'url(#glow)'}); {const w=mutlu.getComputedTextLength(); if(w>960)mutlu.setAttribute('font-size',110*960/w)}
 // ---------- MATLEMUR
 const M=el('g',{});

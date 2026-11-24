@@ -25,7 +25,7 @@ def tanim():
            "Dördüncü ve beşinci satır, ağaç böyle büyüyor!", "Satırlar genişleyince gövdeyi toplarla, ışıklarla doldurduk. Ağaç süsleniyor!",
            "Kural: her satır bir öncekinden 2 sayı fazla. Dördüncü satır 12'yle başlar, 19'la biter!", "Mutlu yıllar! Kaydet ve takip et!"]
     cap = ("MATHLEMUR YENİ YILI KUTLUYOR 🎄\n\nKarekökten yılbaşı ağacı! Her satır, kökü o satır numarasına en yakın doğal sayılardan oluşuyor:\n"
-           "√1\n√2 √3 √4 √5\n√6 √7 … √11\n√12 … √19 …\n\nKural: k. satır k(k−1) ile başlar, 2k tane sayı içerir.\n\n"
+           "√1\n√2 √3 √4 √5\n√6 √7 … √11\n√12 … √19 …\n\nKural: her satır bir öncekinden 2 sayı daha geniş. Örnek: 4. satır 12'den 19'a kadar, 8 sayı.\n\n"
            "Yeni yılın hepimize güzel matematikler getirmesi dileğiyle ✨\n\nKaydet, LGS matematik için lazım olur 📌\n\nHer gün matematik için takip et 👆")
     b, end = MU.beats(ses)
     cfg = dict(kind='yilbasi', accent=GOLD, title='YENİ YILI KUTLUYOR', label='KÖKLERLE YILBAŞI AĞACI', beats=b, end=end, cta=round(b[-1] + .6, 2), subs=alt,
@@ -62,7 +62,7 @@ BALLS.sort((a,b)=>(a.k*10+a.i)-(b.k*10+b.i));
 // kar
 const SNOW=[]; for(let i=0;i<40;i++){const x=(i*173)%1080, ph=(i*57)%100/100; SNOW.push({c:el('circle',{r:3+(i%4),fill:'#fff',opacity:0},main),x,ph,sp:60+(i%5)*22})}
 // kural + tebrik
-const kuralG=el('g',{opacity:0}); T('KURAL',540,330,40,GOLD,{'letter-spacing':10},kuralG); TF('k. satır: k(k−1) … k(k+1)−1',540,405,56,WH,940,{filter:'url(#glow)'},kuralG); T('her satırda 2k tane sayı',540,470,46,CY,{},kuralG);
+const kuralG=el('g',{opacity:0}); T('KURAL',540,330,40,GOLD,{'letter-spacing':10},kuralG); TF('her satır 2 sayı daha geniş',540,405,60,WH,940,{filter:'url(#glow)'},kuralG); T('4. satır: 12 … 19 (8 sayı)',540,470,46,CY,{},kuralG);
 const mutlu=T('MUTLU YILLAR!',540,420,110,GOLD,{opacity:0,filter:'url(#glow)'}); {const w=mutlu.getComputedTextLength(); if(w>960)mutlu.setAttribute('font-size',110*960/w)}
 """
 CONTENT = r"""
