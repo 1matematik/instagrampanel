@@ -12,7 +12,7 @@
     "keşfet"
   ],
   "kaynak": "1+3+5+…+(2n−1)=n² (L şekilli ispat); özgün Mathlemur tasarımı",
-  "durum": "onay-bekliyor",
+  "durum": "onaylandi",
   "ana_izgara": false,
   "kayit": [
     "tek sayılar taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
@@ -20,6 +20,8 @@
     "tek sayılar taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
     "tek sayılar taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
     "tek sayılar taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
-    "2026-11-24: Charon sesli video üretildi (42.4 sn), onay bekliyor"
-  ]
+    "2026-11-24: Charon sesli video üretildi (42.4 sn), onay bekliyor",
+    "24 Kas 23:11 kullanıcı: Maarif bitince, 27 Kas olabilir → 2026-11-27T12:40 (planı onayladı; yayından önce durdurabilir)"
+  ],
+  "yayin_zamani": "2026-11-27T12:40:00+03:00"
 }
