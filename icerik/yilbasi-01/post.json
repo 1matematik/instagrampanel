@@ -12,10 +12,12 @@
     "keşfet"
   ],
   "kaynak": "Karekök yılbaşı ağacı şablonu; özgün Mathlemur tasarımı (kullanıcı fikri)",
-  "durum": "onay-bekliyor",
+  "durum": "onaylandi",
   "ana_izgara": false,
   "kayit": [
     "yılbaşı şablonu taslağı üretildi (Aralık yayını; tarihi kullanıcı belirleyecek)",
-    "2026-11-24: Charon sesli video üretildi (34.3 sn), onay bekliyor"
-  ]
+    "2026-11-24: Charon sesli video üretildi (34.3 sn), onay bekliyor",
+    "Kullanıcı onayı 25 Kas 16:12; yayın 15 Aralık 19:30"
+  ],
+  "yayin_zamani": "2026-12-15T19:30:00+03:00"
 }
