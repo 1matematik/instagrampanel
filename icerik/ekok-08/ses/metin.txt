@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: küçük çark üç tur, büyük çark iki tur.
+Bugün rehber günü: EBOB mu, EKOK mu?
+Büyük bir şeyi eş parçalara bölüyorsan EBOB. Küçük şeyleri biriktirip buluşturuyorsan EKOK.
+Peki sonra? EKOK'u bulunca dört soru sor.
+Başlangıç sayılıyor mu? Şart var mı? Boy mu adet mi? Kalan mı eksik mi?
+Kontrol: EBOB çarpı EKOK, iki sayının çarpımıdır. on iki ve on sekiz için altı çarpı otuz altı, iki yüz on altı.
+Sıra sende! sekiz ile on beşin EBOB'u bir. Peki EKOK'u kaç?

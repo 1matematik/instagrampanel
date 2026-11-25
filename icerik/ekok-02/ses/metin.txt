@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: beş kez.
+A otobüsü sekizde başlayıp 12 dakikada bir, B otobüsü sekiz sıfır dokuzda başlayıp 15 dakikada bir kalkıyor.
+EKOK altmış dakika.
+Peki sonra? İlk birlikte kalkış dokuz mu?
+Hayır! Önce say: A sekiz, sekiz on iki, sekiz yirmi dört. B sekiz sıfır dokuz, sekiz yirmi dört. İlk buluşma sekiz yirmi dört!
+Kural: Biri geç başlıyorsa ilk buluşmayı sayarak bul, sonra EKOK ekle: dokuz yirmi dört, on yirmi dört.
+Sıra sende! B otobüsü sekiz onda başlasaydı, ilk ne zaman birlikte kalkarlardı?

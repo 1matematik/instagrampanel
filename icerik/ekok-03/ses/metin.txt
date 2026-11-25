@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: hiçbir zaman, çünkü fark EBOB'un katı değil.
+yirmi dört santimlik ve kırk santimlik kutular, iki ayrı sıra hâlinde uç uca diziliyor. Sıralar eşit uzunlukta olacak.
+EKOK yüz yirmi santim.
+Peki sonra? Raf dört metre; en uzun sıra kaç santim?
+Önce birim: dört metre, dört yüz santim. yüz yirmi katları: yüz yirmi, iki yüz kırk, üç yüz altmış, dört yüz seksen. Cevap üç yüz altmış santim!
+Kural: EKOK en kısa ortak boydur. Şart varsa EKOK katlarında gez.
+Sıra sende! Aynı kutularla, beş metreden uzun en kısa eşit sıra kaç santim?

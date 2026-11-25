@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: iki yüz seksen sekiz santim.
+Bir rafa on sekiz santimlik kutular dizilince üç santim boşluk kalıyor. on beş santimlik kutular dizilince de yine üç santim.
+EKOK doksan santim.
+Peki sonra? Raf doksan santim mi?
+Hayır! Boşluğu at: raf eksi üç, doksanın katı olmalı. Raf: doksan üç, yüz seksen üç, iki yüz yetmiş üç!
+Kural: Kalanlar aynıysa EKOK katına kalanı ekle.
+Sıra sende! on ikiye ve on beşe bölününce dört kalanını veren en büyük üç basamaklı sayı kaç?

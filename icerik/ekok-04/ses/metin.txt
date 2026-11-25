@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: altı yüz santim.
+on sekiz santimlik ve yirmi dört santimlik bloklarla eşit boyda iki kule yapılıyor. Her kule en az iki metre olacak.
+EKOK yetmiş iki santim.
+Peki sonra? Kaç blok gerekir?
+yetmiş iki katları: yetmiş iki, yüz kırk dört, iki yüz on altı. iki yüz santimi geçen ilk boy iki yüz on altı. iki yüz on altı bölü on sekiz, on iki; iki yüz on altı bölü yirmi dört, dokuz. Toplam yirmi bir blok!
+Kural: Önce şartı sağlayan katı bul, sonra adede geç.
+Sıra sende! İki kulenin boyları toplamı altı metreyi geçmeyecekse, bir kule en çok kaç santim olur?

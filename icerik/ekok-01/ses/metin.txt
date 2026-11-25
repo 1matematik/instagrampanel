@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen serinin cevabı: on bir ağaç. Yeni seri: EKOK bulundu, peki sonra?
+Ormanda iki ateş böceği var: biri on iki saniyede bir, diğeri on sekiz saniyede bir yanıyor. Şimdi birlikte yandılar.
+EKOK otuz altı, yani otuz altı saniyede bir birlikte yanıyorlar.
+Peki sonra? İlk iki yüz saniyede, şimdiki dahil kaç kez birlikte yanarlar?
+iki yüz bölü otuz altı, beş; bunlar sonraki buluşmalar. Şimdiki anı da ekle: altı!
+Kural: Süre bölü EKOK sonrakileri verir; başlangıç sayılıyorsa artı bir.
+Sıra sende! sekiz ve on iki saniyede bir çalan iki zil birlikte çaldı. İlk yüz saniyede, ilk çalış dahil kaç kez birlikte çalar?
