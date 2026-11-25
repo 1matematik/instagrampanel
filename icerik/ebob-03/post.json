@@ -12,12 +12,13 @@
     "keşfet"
   ],
   "kaynak": "EBOB +1/−1 tuzağı serisi (konu fikri: kullanıcının gösterdiği karusel; sayılar, tasarım ve anlatım özgün Mathlemur)",
-  "durum": "onay-bekliyor",
+  "durum": "taslak",
   "ana_izgara": false,
   "kayit": [
     "EBOB +1/−1 serisi taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
     "EBOB +1/−1 serisi taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
     "EBOB +1/−1 serisi taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
-    "Seslendirildi (Charon), onay bekliyor"
+    "Seslendirildi (Charon), onay bekliyor",
+    "TTS bozuk çıktı (süre tutmadı); yeniden seslendirilecek"
   ]
 }
