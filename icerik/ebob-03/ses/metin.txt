@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap, yirmi dört ağaç. İki yana da artı bir!
+Köşesi ortak iki yol var: yetmiş iki metre ve altmış metre. Ortak köşeye de ağaç dikilecek.
+EBOB yetmiş iki, altmış, on iki. Aralık on iki metre!
+Peki sonra? Bir fazlası mı, bir eksiği mi?
+yetmiş iki bölü on iki, altı aralık. altmış bölü on iki, beş aralık. altı artı beş, artı ortak köşe için bir, on iki ağaç!
+Kural: ortak köşe tek, o yüzden sadece bir kez artı bir!
+Sıra sende! Bağımsız iki yol, seksen dört metre ve yüz sekiz metre. Başlarına ve sonlarına ağaç dikiyoruz. Kaç ağaç?

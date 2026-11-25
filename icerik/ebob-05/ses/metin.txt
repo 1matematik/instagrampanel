@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap, on sekiz ağaç. Her yola ayrı artı bir!
+yüz yirmi santimetre ve yüz elli santimetrelik iki tel, en uzun eşit parçalara kesilecek. Kaç kesim gerekir?
+EBOB yüz yirmi, yüz elli, otuz. Parça uzunluğu otuz santimetre!
+Peki sonra? Bir fazlası mı, bir eksiği mi?
+yüz yirmi bölü otuz, dört parça, üç kesim. yüz elli bölü otuz, beş parça, dört kesim. üç artı dört, yedi kesim!
+Kural: kesimde eksi bir! Kesim sayısı, parça sayısından bir eksik!
+Sıra sende! A şehrinden B'ye yüz seksen kilometre, B'den C'ye dört yüz yirmi kilometre. Eşit aralıkla mola veriliyor, B'de de mola var. En az kaç mola?

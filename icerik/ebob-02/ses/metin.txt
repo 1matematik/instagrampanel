@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap, yirmi iki ağaç. Artı bir yoktu!
+doksan metreye elli dört metre tarla, en büyük karelere ayrılıyor. Her karenin köşesine ağaç dikiliyor.
+EBOB doksan, elli dört, on sekiz. Kare kenarı on sekiz metre!
+Peki sonra? Bir fazlası mı, bir eksiği mi?
+doksan bölü on sekiz, beş kare. elli dört bölü on sekiz, üç kare. Her satırın başında ve sonunda ağaç var: beş artı bir çarpı üç artı bir, yirmi dört ağaç!
+Kural: karelere ayırıp köşelere dikiyorsan, iki yana da artı bir!
+Sıra sende! Köşesi ortak, yetmiş iki ve altmış metrelik iki yola eşit aralıkla ağaç dikiyoruz. Kaç ağaç?

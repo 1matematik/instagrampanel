@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap, on iki ağaç. Ortak köşeye bir kez artı bir!
+İki bağımsız yol var: seksen dört metre ve yüz sekiz metre. İkisinin de başına ve sonuna ağaç dikilecek.
+EBOB seksen dört, yüz sekiz, on iki. Aralık on iki metre!
+Peki sonra? Bir fazlası mı, bir eksiği mi?
+seksen dört bölü on iki, yedi aralık, yedi artı bir, sekiz ağaç. yüz sekiz bölü on iki, dokuz aralık, dokuz artı bir, on ağaç. Toplam on sekiz!
+Kural: yollar bağımsızsa, her yola ayrı artı bir!
+Sıra sende! yüz yirmi santimetre ve yüz elli santimetrelik iki tel, en uzun eşit parçalara kesiliyor. En az kaç kesim?

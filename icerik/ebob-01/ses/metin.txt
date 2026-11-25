@@ -1,0 +1,7 @@
+Ben Matlemur! EBOB hesaplandı, peki sonra? Bir fazlası mı, bir eksiği mi? Bu serinin tuzağı bu!
+seksen dört metreye kırk sekiz metre bir bahçenin çevresine eşit aralıkla ağaç dikiyoruz. Köşelere de ağaç gelecek.
+EBOB seksen dört, kırk sekiz, on iki. Aralık on iki metre!
+Peki sonra? Bir fazlası mı, bir eksiği mi?
+Çevre iki yüz altmış dört. Bölü on iki, yirmi iki aralık. Başladığın yere dönüyorsun, ilk ve son ağaç aynı. Artı bir yok! yirmi iki ağaç.
+Kural: çevreye dikiyorsan ve başladığın yere dönüyorsan, artı bir yok!
+Sıra sende! doksan metreye elli dört metre tarlayı en büyük karelere ayırıp köşelere ağaç dikiyoruz. Kaç ağaç?

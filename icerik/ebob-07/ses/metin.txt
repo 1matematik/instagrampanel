@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap, dokuz mola. Şimdi bütün tuzakları tek tabloda toplayalım!
+Çevreye dikiyorsan ve başladığın yere dönüyorsan: artı bir yok.
+Karelere ayırıp köşelere dikiyorsan: iki yana da artı bir. Ortak köşeli iki yolda: sadece bir kez artı bir.
+Bağımsız iki yolda: her yola ayrı artı bir.
+Kesme ve mola sorularında: eksi bir!
+Püf nokta: kaç ayrı başlangıç ve bitiş noktası var, ona bak! Ezberleme, mantığını kur!
+Sıra sende! yüz metrelik düz bir yola on metre aralıkla, başına ve sonuna da ağaç dikiliyor. Kaç ağaç? Yoruma yaz!
