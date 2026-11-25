@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: on yedi; sayılar beş ile on iki.
+yirmiden küçük kaç sayma sayısı on iki ile aralarında asaldır?
+on ikinin asal çarpanları iki ve üç.
+Peki sonra? Sadece asal sayıları mı sayacağım?
+Hayır! ikiye de üçe de bölünmeyenleri say: bir, beş, yedi, on bir, on üç, on yedi, on dokuz. Cevap yedi.
+Kural: iki ve üç asal ama sayılmaz. bir asal değil ama sayılır.
+Sıra sende! yirmi ile otuz arasında, on iki ile aralarında asal kaç sayı var?

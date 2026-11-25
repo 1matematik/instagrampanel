@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: 8; çünkü sıfır virgül altı, en sade hâliyle 3 bölü 5.
+a ile b aralarında asal ve çarpımları otuz altı. a artı b en az kaç?
+Çarpımı otuz altı olan çiftleri yazalım.
+Peki sonra? altı çarpı altı deyip on iki mi diyeceğiz?
+Hayır! altı ile altı aralarında asal değil. iki ile on sekiz ve üç ile on iki de değil. Kalanlar: bir ile otuz altı, dört ile dokuz. En az toplam on üç.
+Kural: Çarpan çiftlerini yaz, ortak böleni olanları ele.
+Sıra sende! a ile b aralarında asal, çarpımları altmış. a artı b en az kaç?

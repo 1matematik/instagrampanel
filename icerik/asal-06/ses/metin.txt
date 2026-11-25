@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: üç; yani yirmi üç, yirmi beş ve yirmi dokuz.
+İki ışık yedi ve dokuz saniyede bir yanıyor. Şimdi birlikte yandılar.
+yedi ile dokuz aralarında asal.
+Peki sonra? EKOK için bölme tablosu şart mı?
+Hayır! Aralarında asalsa EKOK doğrudan çarpımdır: yedi çarpı dokuz, altmış üç.
+Kural: EBOB bir ise EKOK çarpıma eşittir. altı ile sekizde olmaz: EBOB iki, EKOK yirmi dört, kırk sekiz değil.
+Sıra sende! a ile b aralarında asal ve EKOK'ları kırk beş. a artı b en az kaç?

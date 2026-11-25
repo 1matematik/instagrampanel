@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: hayır. on beş ile on sekizin ortak böleni üç.
+a ile b aralarında asal ve a bölü b, otuz altı bölü kırk sekize eşit. a artı b soruluyor.
+otuz altı ile kırk sekizin EBOB'u on iki.
+Peki sonra? a otuz altı, b kırk sekiz mi; toplam seksen dört mü?
+Hayır! otuz altı ile kırk sekiz aralarında asal değil. İkisini de on ikiye böl: üç bölü dört. Toplam yedi.
+Kural: Aralarında asal demek, kesrin en sade hâli demek.
+Sıra sende! a ile b aralarında asal ve a bölü b, sıfır virgül altı ise a artı b kaç?

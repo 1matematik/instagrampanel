@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: yedi ile yirmi bir. yedi asal ama yirmi biri bölüyor.
+otuz dört ile otuz beş, kırk sekiz ile elli, bir ile yüz. Hangileri aralarında asal?
+EBOB hesaplamaya gerek yok.
+Peki sonra? Hesapsız nasıl anlarım?
+Ardışık iki sayı her zaman aralarında asaldır: otuz dört ile otuz beş tamam. İki çift sayı asla olmaz, çünkü iki ortaktır. bir ise her sayıyla aralarında asaldır.
+Kural: Ardışık evet, iki çift hayır, bir her sayıyla evet.
+Sıra sende! Bir tek, bir çift sayı her zaman aralarında asal mıdır? on beş ile on sekizi dene.

@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: on dört; sayılar beş ile dokuz.
+kırk sekiz ile altmış için EBOB'u on iki buldum.
+Doğru olabilir mi?
+Peki sonra? Doğru bulduğumu nasıl anlarım?
+İkisini de on ikiye böl: dört ve beş. Aralarında asal, demek EBOB doğru. altıya bölseydim sekiz ve on çıkardı; ortak iki kaldı, EBOB eksik demek.
+Kural: Sayıları EBOB'a bölünce çıkan sayılar aralarında asaldır.
+Sıra sende! EBOB'u altı, toplamı otuz olan iki farklı sayı kaç değişik şekilde seçilir?

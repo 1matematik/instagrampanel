@@ -1,0 +1,7 @@
+Ben Matlemur! Geçen cevap: yüz yirmi, yani tam sekiz çarpı on beş.
+sekiz asal mı? Değil. on beş de asal değil.
+Ama ortak bölenleri yalnız bir; yani EBOB bir.
+Peki sonra? Aralarında asal olmak için asal olmak şart mı?
+Hayır! Tek tek asal olmaları gerekmez. Ortak bölenin yalnız bir olması yeter.
+Kural: Aralarında asal demek, EBOB bir demek.
+Sıra sende! Hangisi aralarında asal değil: dört ile dokuz, yedi ile yirmi bir, on dört ile on beş?
