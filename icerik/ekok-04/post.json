@@ -12,11 +12,13 @@
     "keşfet"
   ],
   "kaynak": "EKOK tuzakları serisi (konu planı kullanıcı + Fable incelemesi; sayılar ve anlatım özgün Mathlemur)",
-  "durum": "taslak",
+  "durum": "onaylandi",
   "ana_izgara": false,
   "kayit": [
     "EKOK serisi taslağı üretildi (Paket 1; yayın zamanı onaydan sonra)",
     "EKOK serisi taslağı üretildi (Paket 1; yayın zamanı onaydan sonra)",
-    "EKOK serisi taslağı üretildi (Paket 1; yayın zamanı onaydan sonra)"
-  ]
+    "EKOK serisi taslağı üretildi (Paket 1; yayın zamanı onaydan sonra)",
+    "26 Kas: seslendirildi, kullanıcı Paket 1 için önceden onay verdi; 29 Kas 16:30 için zamanlandı"
+  ],
+  "yayin_zamani": "2026-11-29T16:30:00+03:00"
 }
