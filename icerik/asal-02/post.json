@@ -12,11 +12,13 @@
     "keşfet"
   ],
   "kaynak": "Aralarında asal serisi (plan: Fable tasarımı + kullanıcı fikri; sayılar ve anlatım özgün Mathlemur)",
-  "durum": "onay-bekliyor",
+  "durum": "onaylandi",
   "ana_izgara": false,
   "kayit": [
     "Aralarında asal serisi taslağı üretildi (Paket 2; yayın zamanı onaydan sonra)",
     "Aralarında asal serisi taslağı üretildi (Paket 2; yayın zamanı onaydan sonra)",
-    "27 Kas: seslendirildi (Charon), süre/ölçek kontrolü geçti; Paket 2 onayı bekleniyor"
-  ]
+    "27 Kas: seslendirildi (Charon), süre/ölçek kontrolü geçti; Paket 2 onayı bekleniyor",
+    "27 Kas 19:38 kullanıcı Paket 2 onayı; 30 Kas 14:10 için zamanlandı"
+  ],
+  "yayin_zamani": "2026-11-30T14:10:00+03:00"
 }
