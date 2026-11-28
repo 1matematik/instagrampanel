@@ -12,7 +12,7 @@
     "keşfet"
   ],
   "kaynak": "EBOB +1/−1 tuzağı serisi (konu fikri: kullanıcının gösterdiği karusel; sayılar, tasarım ve anlatım özgün Mathlemur)",
-  "durum": "onaylandi",
+  "durum": "yayinlandi",
   "ana_izgara": false,
   "kayit": [
     "EBOB +1/−1 serisi taslağı üretildi (yayın zamanını kullanıcı belirleyecek)",
@@ -21,7 +21,11 @@
     "Seslendirildi (Charon), onay bekliyor",
     "TTS bozuk çıktı (süre tutmadı); yeniden seslendirilecek",
     "Yeniden seslendirildi (Charon), onay bekliyor",
-    "Kullanıcı onayı 25 Kas 13:14; yayın 28 Kas 16:30"
+    "Kullanıcı onayı 25 Kas 13:14; yayın 28 Kas 16:30",
+    "2026-11-28T13:34:55.714Z yayın başladı",
+    "2026-11-28T13:36:03.512Z yayınlandı https://www.instagram.com/reel/DgSX9hchyXl/"
   ],
-  "yayin_zamani": "2026-11-28T16:30:00+03:00"
+  "yayin_zamani": "2026-11-28T16:30:00+03:00",
+  "permalink": "https://www.instagram.com/reel/DgSX9hchyXl/",
+  "yayin_id": "17981300921928957"
 }
